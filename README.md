@@ -2,6 +2,8 @@
 
 A just-in-time automaker keeps no parts inventory, so a late shipment, a plant outage or a defective part lot quickly reaches production schedules, dealers, loaner cars and owners. This control tower reads a feed of operational events, finds everything each event touches through a knowledge graph, and carries out the corrective actions through the enterprise tools, following the policy handbook. A coordinator and three specialist agents do the work, and every plan is proven on a copy of the systems before it runs.
 
+**Live demo:** [wacky-wheels-control-tower.streamlit.app](https://wacky-wheels-control-tower.streamlit.app/)
+
 ![Control tower view](screenshots/01-control-tower-overview.png)
 
 ## What it does
