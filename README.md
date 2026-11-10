@@ -1,6 +1,10 @@
 # Wacky Wheels Control Tower
 
-A multi-agent control tower for a just-in-time automaker with no parts inventory. It reads a feed of operational events, finds everything each event touches through a knowledge graph, and carries out the corrective actions through the enterprise tools, following the policy handbook.
+A just-in-time automaker keeps no parts inventory, so a late shipment, a plant outage or a defective part lot quickly reaches production schedules, dealers, loaner cars and owners. This control tower reads a feed of operational events, finds everything each event touches through a knowledge graph, and carries out the corrective actions through the enterprise tools, following the policy handbook. A coordinator and three specialist agents do the work, and every plan is proven on a copy of the systems before it runs.
+
+![Control tower view](screenshots/01-control-tower-overview.png)
+
+## What it does
 
 | Event type | What the system does |
 |---|---|
@@ -22,15 +26,15 @@ A multi-agent control tower for a just-in-time automaker with no parts inventory
 4. **Prove.** The plan is dry-run on a local copy of the enterprise systems and checked against 13 invariants. A failing check withholds the plan and escalates.
 5. **Execute and explain.** Calls go to the enterprise server. Each event writes a trace with the graph path, plan, proof, executed calls and audit trail.
 
-The ontology has 11 classes (Supplier, Part, Model, Plant, Shipment, Lot, ProductionOrder, CustomerOrder, Customer, Dealer, Vehicle) and 17 relations, one of them inferred (`Lot -INSTALLED_IN-> ProductionOrder`). The built graph has about 17,000 nodes and 28,000 edges. See [DESIGN_CARD.md](DESIGN_CARD.md) for the design in one page.
+The ontology has 11 classes (Supplier, Part, Model, Plant, Shipment, Lot, ProductionOrder, CustomerOrder, Customer, Dealer, Vehicle) and 17 relations, one of them inferred (`Lot -INSTALLED_IN-> ProductionOrder`). The built graph has about 17,000 nodes and 28,000 edges. [DESIGN_CARD.md](DESIGN_CARD.md) describes the design on one page.
 
 ## Model
 
 `qwen2.5:1.5b` (Qwen2.5 1.5B Instruct) served locally by Ollama. The recorded run made 15 LLM calls, 6,423 tokens, 27.8 s of model time (28.9 s end to end). No cloud service is used.
 
-## Results (`runs/final`)
+## Results
 
-15 events: 1 compound, 3 supplier delays, 3 plant outages, 3 quality holds, 3 noise, 2 unconfirmed.
+The recorded run in `runs/final` covers 15 events: 1 compound, 3 supplier delays, 3 plant outages, 3 quality holds, 3 noise and 2 unconfirmed reports.
 
 | | |
 |---|---|
@@ -44,26 +48,38 @@ The ontology has 11 classes (Supplier, Part, Model, Plant, Shipment, Lot, Produc
 
 The log has one line per tool call, each tagged with its `event_id`. The three noise events make no calls, so 12 of the 15 events appear in it.
 
-## Run it
+## Screenshots
+
+| Graph path for a compound event | Actions by agent for a supplier delay |
+|---|---|
+| ![Graph path](screenshots/02-graph-path-compound.png) | ![Actions](screenshots/03-actions-supplier-delay.png) |
+| **Quality hold: lot to vehicles to dealers and owners** | **Unconfirmed reports escalated to a human** |
+| ![Quality hold](screenshots/05-quality-hold-graph-path.png) | ![Human review](screenshots/07-human-review.png) |
+
+The rest are in [`screenshots/`](screenshots): audit trail, noise, live replay, efficiency and model, ontology and audit log.
+
+## Run the UI and the checks
 
 Python 3.11 or newer.
 
 ```bash
 pip install -r requirements.txt
 
+streamlit run control_tower/app.py              # control-tower UI (opens runs/final)
 python -m pytest tests -q                       # tests
 python -m control_tower.replay runs/final       # replay the recorded log on a fresh world
 python tools/audit_run.py runs/final            # independent rule audit
-streamlit run control_tower/app.py              # control-tower UI (opens runs/final)
 ```
 
-Run the agents yourself. Start the enterprise server once per run in one terminal:
+## Run the agents
+
+Start the enterprise server once per run, in one terminal:
 
 ```bash
 python enterprise_server.py --data data --events data/events.json --out runs/new --port 8000
 ```
 
-Then, in a second terminal, run the agents:
+Then run the agents in a second terminal:
 
 ```bash
 python -m control_tower.run --server http://127.0.0.1:8000 --out runs/new
@@ -76,32 +92,32 @@ ollama pull qwen2.5:1.5b
 CT_LLM=ollama CT_LLM_MODEL=qwen2.5:1.5b python -m control_tower.run --server http://127.0.0.1:8000 --out runs/new
 ```
 
-Without `CT_LLM` the rule reader runs alone. `python -m control_tower.run --twin --out runs/offline` runs against the local copy with no server. Any OpenAI-compatible local server also works: set `CT_LLM=openai`, `CT_LLM_URL` and `CT_LLM_MODEL`. To rebuild the readable reports: `python tools/export_reports.py runs/new`.
+Without `CT_LLM` the rule reader runs alone. `python -m control_tower.run --twin --out runs/offline` runs against the local copy with no server. Any OpenAI-compatible local server also works: set `CT_LLM=openai`, `CT_LLM_URL` and `CT_LLM_MODEL`. To rebuild the readable reports for a run: `python tools/export_reports.py runs/new`.
 
-## Layout
+## Repository layout
 
-```
-control_tower/   agents, knowledge graph, grounding, impact traversals, pipeline, verifier, UI
-tools/           audit_run.py (independent audit), export_reports.py (reports and ontology SVG)
-tests/           31 tests
-data/            company tables, policy_handbook.md, events.json
-enterprise.py    mock enterprise systems (MES, dealer portal, CRM, quality)
-enterprise_server.py   local HTTP server for them
-runs/final/      recorded run
-screenshots/     the control-tower UI
-```
+| Path | Contents |
+|---|---|
+| `control_tower/` | Agents, knowledge graph, grounding, impact traversals, pipeline, verifier and the UI |
+| `tools/` | `audit_run.py` (independent audit) and `export_reports.py` (reports and ontology SVG) |
+| `tests/` | 31 tests |
+| `data/` | Company tables, `policy_handbook.md` and `events.json` |
+| `enterprise.py` | Mock enterprise systems: MES, dealer portal, CRM, quality |
+| `enterprise_server.py` | Local HTTP server for those systems |
+| `runs/final/` | The recorded run (below) |
+| `screenshots/` | The control-tower UI |
 
 `runs/final/` contains:
 
 | File | Content |
 |---|---|
-| `action_log.jsonl` | every tool call, written by the server |
-| `traces/E-01.json` … `E-15.json` | per event: readings, grounding, graph path and evidence edges, plan, dry-run proof, executed calls, audit trail, summary |
-| `reports/E-01.md` … `E-15.md` | the same trace as a readable page with the reason for what was done or not done |
-| `reports/ontology.svg` | ontology diagram |
-| `ontology/ontology.json`, `ontology.mmd` | ontology export (JSON and Mermaid) |
-| `run_summary.json` | per-event call counts, model, tokens and timings |
+| `action_log.jsonl` | Every tool call, written by the server |
+| `traces/E-01.json` to `E-15.json` | Per event: readings, grounding, graph path and evidence edges, plan, dry-run proof, executed calls, audit trail, summary |
+| `reports/E-01.md` to `E-15.md` | The same trace as a readable page, with the reason for what was done or not done |
+| `reports/ontology.svg` | Ontology diagram |
+| `ontology/ontology.json`, `ontology.mmd` | Ontology export (JSON and Mermaid) |
+| `run_summary.json` | Per-event call counts, model, tokens and timings |
 
 ## Assumptions
 
-The handbook does not say where a transferred order lands or how to order orders when slots are scarce. Transfers keep the order's original build date (`CT_TRANSFER_ANCHOR=original_date`, alternatives `disruption_start`, `today`, `restart`). Scarce slots go to orders in original date, then id, order. "Next <weekday>" means that day next week unless the data says otherwise.
+The handbook does not say where a transferred order lands, or how to order orders when slots are scarce. Transfers keep the order's original build date (`CT_TRANSFER_ANCHOR=original_date`; the alternatives are `disruption_start`, `today` and `restart`). Scarce slots go to orders in order of original build date, then order id. A phrase like "next Friday" means that day next week unless the data says otherwise.

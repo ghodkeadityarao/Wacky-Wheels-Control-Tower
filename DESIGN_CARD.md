@@ -52,7 +52,7 @@ sentence; the rule reader and grounding overrule it, so such slips cause no extr
 ## Assumptions (the handbook is silent)
 1. Transfers keep the order's original build date (`CT_TRANSFER_ANCHOR=original_date`); this changes 5 orders (E-09, E-11).
 2. When slots are scarce, orders are placed in original (date, id) order.
-3. "next <weekday>" means that day next week unless the data says otherwise (E-04).
+3. A phrase like "next Friday" means that day next week unless the data says otherwise (E-04).
 4. One loaner per customer even with several affected orders.
 
 ## What we would improve
