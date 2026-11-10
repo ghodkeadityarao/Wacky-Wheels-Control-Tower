@@ -1,0 +1,169 @@
+{
+ "event": {
+  "event_id": "E-05",
+  "received_at": "2027-03-08T08:25:00",
+  "source": "news wire",
+  "text": "Dealer Amarillo, TX asks where to find the new brochure PDF."
+ },
+ "readers": {
+  "rules": [
+   {
+    "source": "rules",
+    "segment": 0,
+    "text": "Dealer Amarillo, TX asks where to find the new brochure PDF.",
+    "kind": "noise",
+    "plants": [],
+    "parts": [],
+    "suppliers": [],
+    "shipments": [],
+    "lots": [],
+    "dates": {},
+    "vague_parts": [],
+    "kind_cues": {},
+    "unconfirmed_cues": [],
+    "rationale": "no plant, part, supplier, shipment or lot is mentioned"
+   }
+  ],
+  "llm:qwen2.5:1.5b": [
+   {
+    "source": "llm:qwen2.5:1.5b",
+    "segment": 0,
+    "text": "Dealer Amarillo, TX asks where to find the new brochure PDF.",
+    "kind": "noise",
+    "plants": [],
+    "parts": [],
+    "suppliers": [],
+    "shipments": [],
+    "lots": [],
+    "dates": {},
+    "vague_parts": [],
+    "kind_cues": {},
+    "unconfirmed_cues": [],
+    "rationale": "Dealer Amarillo, TX asks where to find the new brochure PDF."
+   }
+  ]
+ },
+ "verdict": {
+  "category": [
+   "noise"
+  ],
+  "convention": "next_week",
+  "convention_note": "relative dates in this message read the same under every convention",
+  "incidents": [],
+  "escalations": [],
+  "noise_reasons": [
+   "[rules] no plant, part, supplier, shipment or lot is mentioned",
+   "[llm:qwen2.5:1.5b] Dealer Amarillo, TX asks where to find the new brochure PDF."
+  ],
+  "conflicts": [],
+  "review": [],
+  "convention_reason": {
+   "basis": "same"
+  },
+  "readings": [
+   {
+    "reading": {
+     "source": "rules",
+     "segment": 0,
+     "text": "Dealer Amarillo, TX asks where to find the new brochure PDF.",
+     "kind": "noise",
+     "plants": [],
+     "parts": [],
+     "suppliers": [],
+     "shipments": [],
+     "lots": [],
+     "dates": {},
+     "vague_parts": [],
+     "kind_cues": {},
+     "unconfirmed_cues": [],
+     "rationale": "no plant, part, supplier, shipment or lot is mentioned"
+    },
+    "status": "noise",
+    "grounded": [],
+    "reasons": [
+     "no plant, part, supplier, shipment or lot is mentioned"
+    ]
+   },
+   {
+    "reading": {
+     "source": "llm:qwen2.5:1.5b",
+     "segment": 0,
+     "text": "Dealer Amarillo, TX asks where to find the new brochure PDF.",
+     "kind": "noise",
+     "plants": [],
+     "parts": [],
+     "suppliers": [],
+     "shipments": [],
+     "lots": [],
+     "dates": {},
+     "vague_parts": [],
+     "kind_cues": {},
+     "unconfirmed_cues": [],
+     "rationale": "Dealer Amarillo, TX asks where to find the new brochure PDF."
+    },
+    "status": "noise",
+    "grounded": [],
+    "reasons": [
+     "Dealer Amarillo, TX asks where to find the new brochure PDF."
+    ]
+   }
+  ]
+ },
+ "category": [
+  "noise"
+ ],
+ "incidents": [],
+ "plan": [],
+ "dry_run": null,
+ "executed": [],
+ "settings": {
+  "transfer_anchor": "original_date",
+  "llm_backend": "ollama",
+  "llm_model": "qwen2.5:1.5b",
+  "llm_url": null
+ },
+ "human_review": [],
+ "dates_plain": {
+  "dates": [],
+  "why": ""
+ },
+ "loaners": [],
+ "moves": [],
+ "unplaced": [],
+ "escalation": "",
+ "summary": "No action. Not about our operations: no plant, part, supplier, shipment or lot is mentioned.",
+ "audit": [
+  {
+   "t": 1794101063.868,
+   "agent": "Coordinator",
+   "step": "receive",
+   "detail": "news wire: Dealer Amarillo, TX asks where to find the new brochure PDF."
+  },
+  {
+   "t": 1794101064.817,
+   "agent": "Coordinator",
+   "step": "read",
+   "detail": "llm:qwen2.5:1.5b: ['noise']; rules: ['noise']"
+  },
+  {
+   "t": 1794101064.817,
+   "agent": "Coordinator",
+   "step": "ground",
+   "detail": "category=['noise']; 0 grounded incident(s); 0 escalation reason(s); relative dates in this message read the same under every convention"
+  },
+  {
+   "t": 1794101064.817,
+   "agent": "Coordinator",
+   "step": "done",
+   "detail": "No action. Not about our operations: no plant, part, supplier, shipment or lot is mentioned."
+  }
+ ],
+ "stats": {
+  "seconds": 0.95,
+  "live_calls": 0,
+  "failed_live_calls": 0,
+  "blocked_by_catalog": 0,
+  "reads": 0,
+  "writes": 0
+ }
+}

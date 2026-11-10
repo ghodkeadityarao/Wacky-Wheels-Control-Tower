@@ -1,0 +1,3595 @@
+{
+ "event": {
+  "event_id": "E-09",
+  "received_at": "2027-03-08T09:33:00",
+  "source": "supplier email",
+  "text": "Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now (a customs inspection)."
+ },
+ "readers": {
+  "rules": [
+   {
+    "source": "rules",
+    "segment": 0,
+    "text": "Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now (a customs inspection).",
+    "kind": "supplier_delay",
+    "plants": [
+     "P_AL"
+    ],
+    "parts": [
+     "CAM-360"
+    ],
+    "suppliers": [
+     "SUP-11"
+    ],
+    "shipments": [],
+    "lots": [],
+    "dates": {
+     "original_eta": {
+      "phrase": "Monday Mar 29",
+      "candidates": {
+       "explicit": "2027-03-29"
+      },
+      "note": ""
+     },
+     "new_eta": {
+      "phrase": "Thursday Apr 1",
+      "candidates": {
+       "explicit": "2027-04-01"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {
+     "supplier_delay": [
+      "can't make it",
+      "carrier"
+     ]
+    },
+    "unconfirmed_cues": [],
+    "rationale": "cues [\"can't make it\", 'carrier']"
+   }
+  ],
+  "llm:qwen2.5:1.5b": [
+   {
+    "source": "llm:qwen2.5:1.5b",
+    "segment": 0,
+    "text": "the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now",
+    "kind": "plant_outage",
+    "plants": [],
+    "parts": [],
+    "suppliers": [],
+    "shipments": [],
+    "lots": [],
+    "dates": {
+     "start": {
+      "phrase": "2027-03-02",
+      "candidates": {
+       "explicit": "2027-03-02"
+      },
+      "note": ""
+     },
+     "end": {
+      "phrase": "2027-03-08",
+      "candidates": {
+       "explicit": "2027-03-08"
+      },
+      "note": ""
+     },
+     "original_eta": {
+      "phrase": "2027-03-02",
+      "candidates": {
+       "explicit": "2027-03-02"
+      },
+      "note": ""
+     },
+     "new_eta": {
+      "phrase": "2027-04-01",
+      "candidates": {
+       "explicit": "2027-04-01"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {},
+    "unconfirmed_cues": [],
+    "rationale": "carrier says Thursday Apr 1 now"
+   }
+  ]
+ },
+ "verdict": {
+  "category": [
+   "supplier_delay"
+  ],
+  "convention": "next_week",
+  "convention_note": "relative dates in this message read the same under every convention",
+  "incidents": [
+   {
+    "kind": "supplier_delay",
+    "key": [
+     "supplier_delay",
+     "SH-0256",
+     "2027-04-01"
+    ],
+    "bindings": {
+     "shipment": "SH-0256",
+     "supplier": "SUP-11",
+     "part": "CAM-360",
+     "plant": "P_AL",
+     "original_eta": "2027-03-29",
+     "new_eta": "2027-04-01",
+     "date_readings": {
+      "original_eta": "explicit",
+      "new_eta": "explicit"
+     }
+    },
+    "checks": [
+     "Shipment SH-0256 exists (SUP-11 -> CAM-360 -> P_AL, ETA 2027-03-29)",
+     "part CAM-360 matches",
+     "plant P_AL matches",
+     "supplier SUP-11 matches",
+     "original ETA 2027-03-29 matches",
+     "new ETA 2027-04-01 is after original ETA 2027-03-29"
+    ],
+    "convention": "next_week",
+    "source": "rules",
+    "text": "Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now (a customs inspection)."
+   }
+  ],
+  "escalations": [],
+  "noise_reasons": [],
+  "conflicts": [],
+  "review": [],
+  "convention_reason": {
+   "basis": "same"
+  },
+  "readings": [
+   {
+    "reading": {
+     "source": "rules",
+     "segment": 0,
+     "text": "Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now (a customs inspection).",
+     "kind": "supplier_delay",
+     "plants": [
+      "P_AL"
+     ],
+     "parts": [
+      "CAM-360"
+     ],
+     "suppliers": [
+      "SUP-11"
+     ],
+     "shipments": [],
+     "lots": [],
+     "dates": {
+      "original_eta": {
+       "phrase": "Monday Mar 29",
+       "candidates": {
+        "explicit": "2027-03-29"
+       },
+       "note": ""
+      },
+      "new_eta": {
+       "phrase": "Thursday Apr 1",
+       "candidates": {
+        "explicit": "2027-04-01"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {
+      "supplier_delay": [
+       "can't make it",
+       "carrier"
+      ]
+     },
+     "unconfirmed_cues": [],
+     "rationale": "cues [\"can't make it\", 'carrier']"
+    },
+    "status": "grounded",
+    "grounded": [
+     {
+      "kind": "supplier_delay",
+      "key": [
+       "supplier_delay",
+       "SH-0256",
+       "2027-04-01"
+      ],
+      "bindings": {
+       "shipment": "SH-0256",
+       "supplier": "SUP-11",
+       "part": "CAM-360",
+       "plant": "P_AL",
+       "original_eta": "2027-03-29",
+       "new_eta": "2027-04-01",
+       "date_readings": {
+        "original_eta": "explicit",
+        "new_eta": "explicit"
+       }
+      },
+      "checks": [
+       "Shipment SH-0256 exists (SUP-11 -> CAM-360 -> P_AL, ETA 2027-03-29)",
+       "part CAM-360 matches",
+       "plant P_AL matches",
+       "supplier SUP-11 matches",
+       "original ETA 2027-03-29 matches",
+       "new ETA 2027-04-01 is after original ETA 2027-03-29"
+      ],
+      "convention": "next_week",
+      "source": "rules",
+      "text": "Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now (a customs inspection)."
+     }
+    ],
+    "reasons": []
+   },
+   {
+    "reading": {
+     "source": "llm:qwen2.5:1.5b",
+     "segment": 0,
+     "text": "the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursday Apr 1 now",
+     "kind": "plant_outage",
+     "plants": [],
+     "parts": [],
+     "suppliers": [],
+     "shipments": [],
+     "lots": [],
+     "dates": {
+      "start": {
+       "phrase": "2027-03-02",
+       "candidates": {
+        "explicit": "2027-03-02"
+       },
+       "note": ""
+      },
+      "end": {
+       "phrase": "2027-03-08",
+       "candidates": {
+        "explicit": "2027-03-08"
+       },
+       "note": ""
+      },
+      "original_eta": {
+       "phrase": "2027-03-02",
+       "candidates": {
+        "explicit": "2027-03-02"
+       },
+       "note": ""
+      },
+      "new_eta": {
+       "phrase": "2027-04-01",
+       "candidates": {
+        "explicit": "2027-04-01"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {},
+     "unconfirmed_cues": [],
+     "rationale": "carrier says Thursday Apr 1 now"
+    },
+    "status": "failed",
+    "grounded": [],
+    "reasons": [
+     "no plant named"
+    ]
+   }
+  ]
+ },
+ "category": [
+  "supplier_delay"
+ ],
+ "incidents": [
+  {
+   "id": "I1:supplier_delay",
+   "kind": "supplier_delay",
+   "bindings": {
+    "shipment": "SH-0256",
+    "supplier": "SUP-11",
+    "part": "CAM-360",
+    "plant": "P_AL",
+    "original_eta": "2027-03-29",
+    "new_eta": "2027-04-01",
+    "date_readings": {
+     "original_eta": "explicit",
+     "new_eta": "explicit"
+    }
+   },
+   "grounding_checks": [
+    "Shipment SH-0256 exists (SUP-11 -> CAM-360 -> P_AL, ETA 2027-03-29)",
+    "part CAM-360 matches",
+    "plant P_AL matches",
+    "supplier SUP-11 matches",
+    "original ETA 2027-03-29 matches",
+    "new ETA 2027-04-01 is after original ETA 2027-03-29"
+   ],
+   "path_schema": [
+    "Shipment",
+    "Part",
+    "Model (BOM)",
+    "ProductionOrder",
+    "CustomerOrder",
+    "Dealer / Customer"
+   ],
+   "example_path": [
+    "Shipment:SH-0256",
+    "Part:CAM-360",
+    "Model:SUMMIT",
+    "ProductionOrder:PO-0436",
+    "CustomerOrder:CO-02567",
+    "Dealer:D25",
+    "Customer:C1467"
+   ],
+   "evidence_edges": [
+    [
+     "Shipment:SH-0256",
+     "CARRIES",
+     "Part:CAM-360"
+    ],
+    [
+     "Shipment:SH-0256",
+     "DELIVERS_TO",
+     "Plant:P_AL"
+    ],
+    [
+     "Model:SUMMIT",
+     "USES",
+     "Part:CAM-360"
+    ],
+    [
+     "ProductionOrder:PO-0436",
+     "BUILDS",
+     "Model:SUMMIT"
+    ],
+    [
+     "ProductionOrder:PO-0436",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "ProductionOrder:PO-0439",
+     "BUILDS",
+     "Model:SUMMIT"
+    ],
+    [
+     "ProductionOrder:PO-0439",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "ProductionOrder:PO-0442",
+     "BUILDS",
+     "Model:SUMMIT"
+    ],
+    [
+     "ProductionOrder:PO-0442",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "Model:VOYAGER",
+     "USES",
+     "Part:CAM-360"
+    ],
+    [
+     "ProductionOrder:PO-0438",
+     "BUILDS",
+     "Model:VOYAGER"
+    ],
+    [
+     "ProductionOrder:PO-0438",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "ProductionOrder:PO-0441",
+     "BUILDS",
+     "Model:VOYAGER"
+    ],
+    [
+     "ProductionOrder:PO-0441",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "ProductionOrder:PO-0444",
+     "BUILDS",
+     "Model:VOYAGER"
+    ],
+    [
+     "ProductionOrder:PO-0444",
+     "AT_PLANT",
+     "Plant:P_AL"
+    ],
+    [
+     "CustomerOrder:CO-02567",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02567",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02567",
+     "PLACED_BY",
+     "Customer:C1467"
+    ],
+    [
+     "CustomerOrder:CO-02568",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02568",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02568",
+     "PLACED_BY",
+     "Customer:C0740"
+    ],
+    [
+     "CustomerOrder:CO-02569",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02569",
+     "SOLD_THROUGH",
+     "Dealer:D45"
+    ],
+    [
+     "CustomerOrder:CO-02569",
+     "PLACED_BY",
+     "Customer:C5203"
+    ],
+    [
+     "CustomerOrder:CO-02570",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02570",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02570",
+     "PLACED_BY",
+     "Customer:C5790"
+    ],
+    [
+     "CustomerOrder:CO-02571",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02571",
+     "SOLD_THROUGH",
+     "Dealer:D35"
+    ],
+    [
+     "CustomerOrder:CO-02571",
+     "PLACED_BY",
+     "Customer:C1703"
+    ],
+    [
+     "CustomerOrder:CO-02572",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02572",
+     "SOLD_THROUGH",
+     "Dealer:D02"
+    ],
+    [
+     "CustomerOrder:CO-02572",
+     "PLACED_BY",
+     "Customer:C1001"
+    ],
+    [
+     "CustomerOrder:CO-02573",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02573",
+     "SOLD_THROUGH",
+     "Dealer:D46"
+    ],
+    [
+     "CustomerOrder:CO-02573",
+     "PLACED_BY",
+     "Customer:C5789"
+    ],
+    [
+     "CustomerOrder:CO-02574",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0436"
+    ],
+    [
+     "CustomerOrder:CO-02574",
+     "SOLD_THROUGH",
+     "Dealer:D47"
+    ],
+    [
+     "CustomerOrder:CO-02574",
+     "PLACED_BY",
+     "Customer:C4375"
+    ],
+    [
+     "CustomerOrder:CO-02584",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02584",
+     "SOLD_THROUGH",
+     "Dealer:D21"
+    ],
+    [
+     "CustomerOrder:CO-02584",
+     "PLACED_BY",
+     "Customer:C1513"
+    ],
+    [
+     "CustomerOrder:CO-02585",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02585",
+     "SOLD_THROUGH",
+     "Dealer:D38"
+    ],
+    [
+     "CustomerOrder:CO-02585",
+     "PLACED_BY",
+     "Customer:C1011"
+    ],
+    [
+     "CustomerOrder:CO-02586",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02586",
+     "SOLD_THROUGH",
+     "Dealer:D35"
+    ],
+    [
+     "CustomerOrder:CO-02586",
+     "PLACED_BY",
+     "Customer:C6543"
+    ],
+    [
+     "CustomerOrder:CO-02587",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02587",
+     "SOLD_THROUGH",
+     "Dealer:D31"
+    ],
+    [
+     "CustomerOrder:CO-02587",
+     "PLACED_BY",
+     "Customer:C6144"
+    ],
+    [
+     "CustomerOrder:CO-02588",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02588",
+     "SOLD_THROUGH",
+     "Dealer:D36"
+    ],
+    [
+     "CustomerOrder:CO-02588",
+     "PLACED_BY",
+     "Customer:C6413"
+    ],
+    [
+     "CustomerOrder:CO-02589",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02589",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02589",
+     "PLACED_BY",
+     "Customer:C4525"
+    ],
+    [
+     "CustomerOrder:CO-02590",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02590",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02590",
+     "PLACED_BY",
+     "Customer:C1928"
+    ],
+    [
+     "CustomerOrder:CO-02591",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02591",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02591",
+     "PLACED_BY",
+     "Customer:C6457"
+    ],
+    [
+     "CustomerOrder:CO-02592",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0438"
+    ],
+    [
+     "CustomerOrder:CO-02592",
+     "SOLD_THROUGH",
+     "Dealer:D24"
+    ],
+    [
+     "CustomerOrder:CO-02592",
+     "PLACED_BY",
+     "Customer:C1939"
+    ],
+    [
+     "CustomerOrder:CO-02593",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02593",
+     "SOLD_THROUGH",
+     "Dealer:D26"
+    ],
+    [
+     "CustomerOrder:CO-02593",
+     "PLACED_BY",
+     "Customer:C3575"
+    ],
+    [
+     "CustomerOrder:CO-02594",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02594",
+     "SOLD_THROUGH",
+     "Dealer:D23"
+    ],
+    [
+     "CustomerOrder:CO-02594",
+     "PLACED_BY",
+     "Customer:C2559"
+    ],
+    [
+     "CustomerOrder:CO-02595",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02595",
+     "SOLD_THROUGH",
+     "Dealer:D44"
+    ],
+    [
+     "CustomerOrder:CO-02595",
+     "PLACED_BY",
+     "Customer:C5324"
+    ],
+    [
+     "CustomerOrder:CO-02596",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02596",
+     "SOLD_THROUGH",
+     "Dealer:D03"
+    ],
+    [
+     "CustomerOrder:CO-02596",
+     "PLACED_BY",
+     "Customer:C2859"
+    ],
+    [
+     "CustomerOrder:CO-02597",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02597",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02597",
+     "PLACED_BY",
+     "Customer:C0709"
+    ],
+    [
+     "CustomerOrder:CO-02598",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02598",
+     "SOLD_THROUGH",
+     "Dealer:D44"
+    ],
+    [
+     "CustomerOrder:CO-02598",
+     "PLACED_BY",
+     "Customer:C4530"
+    ],
+    [
+     "CustomerOrder:CO-02599",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02599",
+     "SOLD_THROUGH",
+     "Dealer:D47"
+    ],
+    [
+     "CustomerOrder:CO-02599",
+     "PLACED_BY",
+     "Customer:C0527"
+    ],
+    [
+     "CustomerOrder:CO-02600",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02600",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02600",
+     "PLACED_BY",
+     "Customer:C6205"
+    ],
+    [
+     "CustomerOrder:CO-02601",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02601",
+     "SOLD_THROUGH",
+     "Dealer:D20"
+    ],
+    [
+     "CustomerOrder:CO-02601",
+     "PLACED_BY",
+     "Customer:C0458"
+    ],
+    [
+     "CustomerOrder:CO-02602",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0439"
+    ],
+    [
+     "CustomerOrder:CO-02602",
+     "SOLD_THROUGH",
+     "Dealer:D16"
+    ],
+    [
+     "CustomerOrder:CO-02602",
+     "PLACED_BY",
+     "Customer:C4699"
+    ],
+    [
+     "CustomerOrder:CO-02613",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02613",
+     "SOLD_THROUGH",
+     "Dealer:D46"
+    ],
+    [
+     "CustomerOrder:CO-02613",
+     "PLACED_BY",
+     "Customer:C3192"
+    ],
+    [
+     "CustomerOrder:CO-02614",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02614",
+     "SOLD_THROUGH",
+     "Dealer:D26"
+    ],
+    [
+     "CustomerOrder:CO-02614",
+     "PLACED_BY",
+     "Customer:C3356"
+    ],
+    [
+     "CustomerOrder:CO-02615",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02615",
+     "SOLD_THROUGH",
+     "Dealer:D27"
+    ],
+    [
+     "CustomerOrder:CO-02615",
+     "PLACED_BY",
+     "Customer:C1676"
+    ],
+    [
+     "CustomerOrder:CO-02616",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02616",
+     "SOLD_THROUGH",
+     "Dealer:D44"
+    ],
+    [
+     "CustomerOrder:CO-02616",
+     "PLACED_BY",
+     "Customer:C2641"
+    ],
+    [
+     "CustomerOrder:CO-02617",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02617",
+     "SOLD_THROUGH",
+     "Dealer:D34"
+    ],
+    [
+     "CustomerOrder:CO-02617",
+     "PLACED_BY",
+     "Customer:C1223"
+    ],
+    [
+     "CustomerOrder:CO-02618",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02618",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02618",
+     "PLACED_BY",
+     "Customer:C4679"
+    ],
+    [
+     "CustomerOrder:CO-02619",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02619",
+     "SOLD_THROUGH",
+     "Dealer:D20"
+    ],
+    [
+     "CustomerOrder:CO-02619",
+     "PLACED_BY",
+     "Customer:C5355"
+    ],
+    [
+     "CustomerOrder:CO-02620",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0441"
+    ],
+    [
+     "CustomerOrder:CO-02620",
+     "SOLD_THROUGH",
+     "Dealer:D06"
+    ],
+    [
+     "CustomerOrder:CO-02620",
+     "PLACED_BY",
+     "Customer:C4959"
+    ],
+    [
+     "CustomerOrder:CO-02621",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02621",
+     "SOLD_THROUGH",
+     "Dealer:D50"
+    ],
+    [
+     "CustomerOrder:CO-02621",
+     "PLACED_BY",
+     "Customer:C2028"
+    ],
+    [
+     "CustomerOrder:CO-02622",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02622",
+     "SOLD_THROUGH",
+     "Dealer:D06"
+    ],
+    [
+     "CustomerOrder:CO-02622",
+     "PLACED_BY",
+     "Customer:C0792"
+    ],
+    [
+     "CustomerOrder:CO-02623",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02623",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02623",
+     "PLACED_BY",
+     "Customer:C0997"
+    ],
+    [
+     "CustomerOrder:CO-02624",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02624",
+     "SOLD_THROUGH",
+     "Dealer:D15"
+    ],
+    [
+     "CustomerOrder:CO-02624",
+     "PLACED_BY",
+     "Customer:C0918"
+    ],
+    [
+     "CustomerOrder:CO-02625",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02625",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02625",
+     "PLACED_BY",
+     "Customer:C4317"
+    ],
+    [
+     "CustomerOrder:CO-02626",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02626",
+     "SOLD_THROUGH",
+     "Dealer:D46"
+    ],
+    [
+     "CustomerOrder:CO-02626",
+     "PLACED_BY",
+     "Customer:C0448"
+    ],
+    [
+     "CustomerOrder:CO-02627",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02627",
+     "SOLD_THROUGH",
+     "Dealer:D47"
+    ],
+    [
+     "CustomerOrder:CO-02627",
+     "PLACED_BY",
+     "Customer:C5928"
+    ],
+    [
+     "CustomerOrder:CO-02628",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02628",
+     "SOLD_THROUGH",
+     "Dealer:D04"
+    ],
+    [
+     "CustomerOrder:CO-02628",
+     "PLACED_BY",
+     "Customer:C6557"
+    ],
+    [
+     "CustomerOrder:CO-02629",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0442"
+    ],
+    [
+     "CustomerOrder:CO-02629",
+     "SOLD_THROUGH",
+     "Dealer:D12"
+    ],
+    [
+     "CustomerOrder:CO-02629",
+     "PLACED_BY",
+     "Customer:C5629"
+    ],
+    [
+     "CustomerOrder:CO-02640",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02640",
+     "SOLD_THROUGH",
+     "Dealer:D16"
+    ],
+    [
+     "CustomerOrder:CO-02640",
+     "PLACED_BY",
+     "Customer:C3035"
+    ],
+    [
+     "CustomerOrder:CO-02641",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02641",
+     "SOLD_THROUGH",
+     "Dealer:D34"
+    ],
+    [
+     "CustomerOrder:CO-02641",
+     "PLACED_BY",
+     "Customer:C5173"
+    ],
+    [
+     "CustomerOrder:CO-02642",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02642",
+     "SOLD_THROUGH",
+     "Dealer:D23"
+    ],
+    [
+     "CustomerOrder:CO-02642",
+     "PLACED_BY",
+     "Customer:C0378"
+    ],
+    [
+     "CustomerOrder:CO-02643",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02643",
+     "SOLD_THROUGH",
+     "Dealer:D04"
+    ],
+    [
+     "CustomerOrder:CO-02643",
+     "PLACED_BY",
+     "Customer:C6843"
+    ],
+    [
+     "CustomerOrder:CO-02644",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02644",
+     "SOLD_THROUGH",
+     "Dealer:D25"
+    ],
+    [
+     "CustomerOrder:CO-02644",
+     "PLACED_BY",
+     "Customer:C5679"
+    ],
+    [
+     "CustomerOrder:CO-02645",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02645",
+     "SOLD_THROUGH",
+     "Dealer:D44"
+    ],
+    [
+     "CustomerOrder:CO-02645",
+     "PLACED_BY",
+     "Customer:C5310"
+    ],
+    [
+     "CustomerOrder:CO-02646",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02646",
+     "SOLD_THROUGH",
+     "Dealer:D12"
+    ],
+    [
+     "CustomerOrder:CO-02646",
+     "PLACED_BY",
+     "Customer:C2019"
+    ],
+    [
+     "CustomerOrder:CO-02647",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02647",
+     "SOLD_THROUGH",
+     "Dealer:D30"
+    ],
+    [
+     "CustomerOrder:CO-02647",
+     "PLACED_BY",
+     "Customer:C6616"
+    ],
+    [
+     "CustomerOrder:CO-02648",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02648",
+     "SOLD_THROUGH",
+     "Dealer:D50"
+    ],
+    [
+     "CustomerOrder:CO-02648",
+     "PLACED_BY",
+     "Customer:C4305"
+    ],
+    [
+     "CustomerOrder:CO-02649",
+     "FULFILLED_BY",
+     "ProductionOrder:PO-0444"
+    ],
+    [
+     "CustomerOrder:CO-02649",
+     "SOLD_THROUGH",
+     "Dealer:D08"
+    ],
+    [
+     "CustomerOrder:CO-02649",
+     "PLACED_BY",
+     "Customer:C5335"
+    ]
+   ],
+   "affected_production_orders": [
+    "PO-0436",
+    "PO-0438",
+    "PO-0439",
+    "PO-0441",
+    "PO-0442",
+    "PO-0444"
+   ],
+   "lots": [],
+   "vehicles": 0,
+   "blocked": [
+    "2027-03-29",
+    "2027-03-31"
+   ],
+   "restart": "2027-04-01"
+  }
+ ],
+ "plan": [
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_AL",
+    "date": "2027-04-01"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": []
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_AL",
+    "date": "2027-04-02"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": []
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_IN",
+    "date": "2027-03-31"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": []
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_KY",
+    "date": "2027-03-31"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": []
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0436",
+    "new_date": "2027-04-01"
+   },
+   "why": "PO-0436 (SUMMIT) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (4/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0438",
+    "new_date": "2027-04-01"
+   },
+   "why": "PO-0438 (VOYAGER) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (5/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0439",
+    "new_date": "2027-04-02"
+   },
+   "why": "PO-0439 (SUMMIT) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (4/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0441",
+    "new_date": "2027-04-02"
+   },
+   "why": "PO-0441 (VOYAGER) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (5/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.transfer",
+   "args": {
+    "production_order_id": "PO-0442",
+    "to_plant_id": "P_KY",
+    "new_date": "2027-03-31"
+   },
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_KY builds SUMMIT and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.transfer",
+   "args": {
+    "production_order_id": "PO-0444",
+    "to_plant_id": "P_IN",
+    "new_date": "2027-03-31"
+   },
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_IN builds VOYAGER and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D02",
+    "customer_order_ids": [
+     "CO-02572"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02572 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D03",
+    "customer_order_ids": [
+     "CO-02596"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02596 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D04",
+    "customer_order_ids": [
+     "CO-02628",
+     "CO-02643"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02628 -> new build 2027-03-31 at P_KY; CO-02643 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D06",
+    "customer_order_ids": [
+     "CO-02620",
+     "CO-02622"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02620 -> new build 2027-04-02 at P_AL; CO-02622 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D08",
+    "customer_order_ids": [
+     "CO-02589",
+     "CO-02590",
+     "CO-02597",
+     "CO-02623",
+     "CO-02625",
+     "CO-02649"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 6 of your customer order(s) are affected. CO-02589 -> new build 2027-04-01 at P_AL; CO-02590 -> new build 2027-04-01 at P_AL; CO-02597 -> new build 2027-04-02 at P_AL; CO-02623 -> new build 2027-03-31 at P_KY; CO-02625 -> new build 2027-03-31 at P_KY; CO-02649 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 6 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D12",
+    "customer_order_ids": [
+     "CO-02629",
+     "CO-02646"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02629 -> new build 2027-03-31 at P_KY; CO-02646 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D15",
+    "customer_order_ids": [
+     "CO-02624"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02624 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D16",
+    "customer_order_ids": [
+     "CO-02602",
+     "CO-02640"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02602 -> new build 2027-04-02 at P_AL; CO-02640 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D20",
+    "customer_order_ids": [
+     "CO-02601",
+     "CO-02619"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02601 -> new build 2027-04-02 at P_AL; CO-02619 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D21",
+    "customer_order_ids": [
+     "CO-02584"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02584 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D23",
+    "customer_order_ids": [
+     "CO-02594",
+     "CO-02642"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02594 -> new build 2027-04-02 at P_AL; CO-02642 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D24",
+    "customer_order_ids": [
+     "CO-02592"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02592 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D25",
+    "customer_order_ids": [
+     "CO-02567",
+     "CO-02568",
+     "CO-02570",
+     "CO-02591",
+     "CO-02600",
+     "CO-02618",
+     "CO-02644"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 7 of your customer order(s) are affected. CO-02567 -> new build 2027-04-01 at P_AL; CO-02568 -> new build 2027-04-01 at P_AL; CO-02570 -> new build 2027-04-01 at P_AL; CO-02591 -> new build 2027-04-01 at P_AL; CO-02600 -> new build 2027-04-02 at P_AL; CO-02618 -> new build 2027-04-02 at P_AL; CO-02644 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 7 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D26",
+    "customer_order_ids": [
+     "CO-02593",
+     "CO-02614"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02593 -> new build 2027-04-02 at P_AL; CO-02614 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D27",
+    "customer_order_ids": [
+     "CO-02615"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02615 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D30",
+    "customer_order_ids": [
+     "CO-02647"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02647 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D31",
+    "customer_order_ids": [
+     "CO-02587"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02587 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D34",
+    "customer_order_ids": [
+     "CO-02617",
+     "CO-02641"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02617 -> new build 2027-04-02 at P_AL; CO-02641 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D35",
+    "customer_order_ids": [
+     "CO-02571",
+     "CO-02586"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02571 -> new build 2027-04-01 at P_AL; CO-02586 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D36",
+    "customer_order_ids": [
+     "CO-02588"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02588 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D38",
+    "customer_order_ids": [
+     "CO-02585"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02585 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D44",
+    "customer_order_ids": [
+     "CO-02595",
+     "CO-02598",
+     "CO-02616",
+     "CO-02645"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 4 of your customer order(s) are affected. CO-02595 -> new build 2027-04-02 at P_AL; CO-02598 -> new build 2027-04-02 at P_AL; CO-02616 -> new build 2027-04-02 at P_AL; CO-02645 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 4 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D45",
+    "customer_order_ids": [
+     "CO-02569"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02569 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D46",
+    "customer_order_ids": [
+     "CO-02573",
+     "CO-02613",
+     "CO-02626"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 3 of your customer order(s) are affected. CO-02573 -> new build 2027-04-01 at P_AL; CO-02613 -> new build 2027-04-02 at P_AL; CO-02626 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 3 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D47",
+    "customer_order_ids": [
+     "CO-02574",
+     "CO-02599",
+     "CO-02627"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 3 of your customer order(s) are affected. CO-02574 -> new build 2027-04-01 at P_AL; CO-02599 -> new build 2027-04-02 at P_AL; CO-02627 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 3 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D50",
+    "customer_order_ids": [
+     "CO-02621",
+     "CO-02648"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02621 -> new build 2027-03-31 at P_KY; CO-02648 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D04"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02628"
+   },
+   "why": "Gold customer C6557, promised 2027-04-03; priority #1 of 1 entitled at D04 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D08"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02590"
+   },
+   "why": "Gold customer C1928, promised 2027-04-01; priority #1 of 1 entitled at D08 (pool 3)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D16"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02640"
+   },
+   "why": "Platinum customer C3035, promised 2027-04-04; priority #1 of 1 entitled at D16 (pool 3)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D25"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02570"
+   },
+   "why": "Platinum customer C5790, promised 2027-04-01; priority #1 of 3 entitled at D25 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D26"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02593"
+   },
+   "why": "Platinum customer C3575, promised 2027-04-02; priority #1 of 1 entitled at D26 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D27"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02615"
+   },
+   "why": "Gold customer C1676, promised 2027-04-04; priority #1 of 1 entitled at D27 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D31"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02587"
+   },
+   "why": "Gold customer C6144, promised 2027-04-02; priority #1 of 1 entitled at D31 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D34"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02641"
+   },
+   "why": "Gold customer C5173, promised 2027-04-04; priority #1 of 1 entitled at D34 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D44"
+   },
+   "why": "check pool before assigning",
+   "incidents": []
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02645"
+   },
+   "why": "Platinum customer C5310, promised 2027-04-05; priority #1 of 2 entitled at D44 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02598"
+   },
+   "why": "Gold customer C4530, promised 2027-04-04; priority #2 of 2 entitled at D44 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ]
+  }
+ ],
+ "dry_run": {
+  "ok": true,
+  "calls": 55,
+  "checks": [
+   {
+    "check": "no failed calls in dry run",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "moved exactly the affected production orders",
+    "ok": true,
+    "detail": "extra=[] missing=[] (n=6)"
+   },
+   {
+    "check": "no plant-day over capacity",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "no order moved into a disrupted day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "same-plant moves are at/after the restart day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "transfers only when the home plant is full",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "dealer notices list exactly the affected customer orders",
+    "ok": true,
+    "detail": "dealers expected=26 got=26"
+   },
+   {
+    "check": "exactly one notice per dealer",
+    "ok": true,
+    "detail": "[('D02', 1), ('D03', 1)]"
+   },
+   {
+    "check": "loaners match pool limits and priority",
+    "ok": true,
+    "detail": "expected 10 of 12 entitled; got 10"
+   },
+   {
+    "check": "lots held",
+    "ok": true,
+    "detail": "[] vs []"
+   },
+   {
+    "check": "stop-sale exactly the unsold affected vehicles",
+    "ok": true,
+    "detail": "0 vs 0"
+   },
+   {
+    "check": "owners of sold affected vehicles contacted (and nobody else)",
+    "ok": true,
+    "detail": "0 vs 0"
+   },
+   {
+    "check": "at least three kinds of action per real incident",
+    "ok": true,
+    "detail": "['crm.assign_loaner', 'dealer.notify', 'mes.reschedule', 'mes.transfer']"
+   }
+  ]
+ },
+ "executed": [
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_AL",
+    "date": "2027-04-01"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "plant_id": "P_AL",
+    "date": "2027-04-01",
+    "orders": [
+     {
+      "production_order_id": "PO-0445",
+      "model": "SUMMIT"
+     },
+     {
+      "production_order_id": "PO-0446",
+      "model": "NOVA"
+     },
+     {
+      "production_order_id": "PO-0447",
+      "model": "VOYAGER"
+     }
+    ],
+    "free_slots": 2
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_AL",
+    "date": "2027-04-02"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "plant_id": "P_AL",
+    "date": "2027-04-02",
+    "orders": [
+     {
+      "production_order_id": "PO-0448",
+      "model": "SUMMIT"
+     },
+     {
+      "production_order_id": "PO-0449",
+      "model": "NOVA"
+     },
+     {
+      "production_order_id": "PO-0450",
+      "model": "VOYAGER"
+     }
+    ],
+    "free_slots": 2
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_IN",
+    "date": "2027-03-31"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "plant_id": "P_IN",
+    "date": "2027-03-31",
+    "orders": [
+     {
+      "production_order_id": "PO-0352",
+      "model": "VOYAGER"
+     },
+     {
+      "production_order_id": "PO-0353",
+      "model": "RANGER"
+     },
+     {
+      "production_order_id": "PO-0354",
+      "model": "NOVA"
+     }
+    ],
+    "free_slots": 2
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.get_schedule",
+   "args": {
+    "plant_id": "P_KY",
+    "date": "2027-03-31"
+   },
+   "why": "confirm live free slots before moving",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "plant_id": "P_KY",
+    "date": "2027-03-31",
+    "orders": [
+     {
+      "production_order_id": "PO-0172",
+      "model": "PIONEER"
+     },
+     {
+      "production_order_id": "PO-0173",
+      "model": "SUMMIT"
+     },
+     {
+      "production_order_id": "PO-0174",
+      "model": "VOYAGER"
+     }
+    ],
+    "free_slots": 2
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0436",
+    "new_date": "2027-04-01"
+   },
+   "why": "PO-0436 (SUMMIT) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (4/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0436",
+    "plant_id": "P_AL",
+    "date": "2027-04-01"
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0438",
+    "new_date": "2027-04-01"
+   },
+   "why": "PO-0438 (VOYAGER) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (5/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0438",
+    "plant_id": "P_AL",
+    "date": "2027-04-01"
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0439",
+    "new_date": "2027-04-02"
+   },
+   "why": "PO-0439 (SUMMIT) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (4/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0439",
+    "plant_id": "P_AL",
+    "date": "2027-04-02"
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.reschedule",
+   "args": {
+    "production_order_id": "PO-0441",
+    "new_date": "2027-04-02"
+   },
+   "why": "PO-0441 (VOYAGER) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (5/5 used after move)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0441",
+    "plant_id": "P_AL",
+    "date": "2027-04-02"
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.transfer",
+   "args": {
+    "production_order_id": "PO-0442",
+    "to_plant_id": "P_KY",
+    "new_date": "2027-03-31"
+   },
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_KY builds SUMMIT and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0442",
+    "plant_id": "P_KY",
+    "date": "2027-03-31"
+   }
+  },
+  {
+   "agent": "SupplyChainPlanner",
+   "tool": "mes.transfer",
+   "args": {
+    "production_order_id": "PO-0444",
+    "to_plant_id": "P_IN",
+    "new_date": "2027-03-31"
+   },
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_IN builds VOYAGER and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "production_order_id": "PO-0444",
+    "plant_id": "P_IN",
+    "date": "2027-03-31"
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D02",
+    "customer_order_ids": [
+     "CO-02572"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02572 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D03",
+    "customer_order_ids": [
+     "CO-02596"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02596 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D04",
+    "customer_order_ids": [
+     "CO-02628",
+     "CO-02643"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02628 -> new build 2027-03-31 at P_KY; CO-02643 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D06",
+    "customer_order_ids": [
+     "CO-02620",
+     "CO-02622"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02620 -> new build 2027-04-02 at P_AL; CO-02622 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D08",
+    "customer_order_ids": [
+     "CO-02589",
+     "CO-02590",
+     "CO-02597",
+     "CO-02623",
+     "CO-02625",
+     "CO-02649"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 6 of your customer order(s) are affected. CO-02589 -> new build 2027-04-01 at P_AL; CO-02590 -> new build 2027-04-01 at P_AL; CO-02597 -> new build 2027-04-02 at P_AL; CO-02623 -> new build 2027-03-31 at P_KY; CO-02625 -> new build 2027-03-31 at P_KY; CO-02649 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 6 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D12",
+    "customer_order_ids": [
+     "CO-02629",
+     "CO-02646"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02629 -> new build 2027-03-31 at P_KY; CO-02646 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D15",
+    "customer_order_ids": [
+     "CO-02624"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02624 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D16",
+    "customer_order_ids": [
+     "CO-02602",
+     "CO-02640"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02602 -> new build 2027-04-02 at P_AL; CO-02640 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D20",
+    "customer_order_ids": [
+     "CO-02601",
+     "CO-02619"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02601 -> new build 2027-04-02 at P_AL; CO-02619 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D21",
+    "customer_order_ids": [
+     "CO-02584"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02584 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D23",
+    "customer_order_ids": [
+     "CO-02594",
+     "CO-02642"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02594 -> new build 2027-04-02 at P_AL; CO-02642 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D24",
+    "customer_order_ids": [
+     "CO-02592"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02592 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D25",
+    "customer_order_ids": [
+     "CO-02567",
+     "CO-02568",
+     "CO-02570",
+     "CO-02591",
+     "CO-02600",
+     "CO-02618",
+     "CO-02644"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 7 of your customer order(s) are affected. CO-02567 -> new build 2027-04-01 at P_AL; CO-02568 -> new build 2027-04-01 at P_AL; CO-02570 -> new build 2027-04-01 at P_AL; CO-02591 -> new build 2027-04-01 at P_AL; CO-02600 -> new build 2027-04-02 at P_AL; CO-02618 -> new build 2027-04-02 at P_AL; CO-02644 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 7 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D26",
+    "customer_order_ids": [
+     "CO-02593",
+     "CO-02614"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02593 -> new build 2027-04-02 at P_AL; CO-02614 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D27",
+    "customer_order_ids": [
+     "CO-02615"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02615 -> new build 2027-04-02 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D30",
+    "customer_order_ids": [
+     "CO-02647"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02647 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D31",
+    "customer_order_ids": [
+     "CO-02587"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02587 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D34",
+    "customer_order_ids": [
+     "CO-02617",
+     "CO-02641"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02617 -> new build 2027-04-02 at P_AL; CO-02641 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D35",
+    "customer_order_ids": [
+     "CO-02571",
+     "CO-02586"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02571 -> new build 2027-04-01 at P_AL; CO-02586 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D36",
+    "customer_order_ids": [
+     "CO-02588"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02588 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D38",
+    "customer_order_ids": [
+     "CO-02585"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02585 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D44",
+    "customer_order_ids": [
+     "CO-02595",
+     "CO-02598",
+     "CO-02616",
+     "CO-02645"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 4 of your customer order(s) are affected. CO-02595 -> new build 2027-04-02 at P_AL; CO-02598 -> new build 2027-04-02 at P_AL; CO-02616 -> new build 2027-04-02 at P_AL; CO-02645 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 4 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D45",
+    "customer_order_ids": [
+     "CO-02569"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 1 of your customer order(s) are affected. CO-02569 -> new build 2027-04-01 at P_AL. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 1 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D46",
+    "customer_order_ids": [
+     "CO-02573",
+     "CO-02613",
+     "CO-02626"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 3 of your customer order(s) are affected. CO-02573 -> new build 2027-04-01 at P_AL; CO-02613 -> new build 2027-04-02 at P_AL; CO-02626 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 3 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D47",
+    "customer_order_ids": [
+     "CO-02574",
+     "CO-02599",
+     "CO-02627"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 3 of your customer order(s) are affected. CO-02574 -> new build 2027-04-01 at P_AL; CO-02599 -> new build 2027-04-02 at P_AL; CO-02627 -> new build 2027-03-31 at P_KY. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 3 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.notify",
+   "args": {
+    "dealer_id": "D50",
+    "customer_order_ids": [
+     "CO-02621",
+     "CO-02648"
+    ],
+    "message": "Delay notice (I1:supplier_delay): 2 of your customer order(s) are affected. CO-02621 -> new build 2027-03-31 at P_KY; CO-02648 -> new build 2027-03-31 at P_IN. Platinum/Gold customers are being offered loaners where available."
+   },
+   "why": "dealer has 2 affected customer order(s); exactly one notice, listing only those",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D04"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D04",
+    "available": 1
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02628"
+   },
+   "why": "Gold customer C6557, promised 2027-04-03; priority #1 of 1 entitled at D04 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D04"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D08"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D08",
+    "available": 3
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02590"
+   },
+   "why": "Gold customer C1928, promised 2027-04-01; priority #1 of 1 entitled at D08 (pool 3)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D08"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D16"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D16",
+    "available": 3
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02640"
+   },
+   "why": "Platinum customer C3035, promised 2027-04-04; priority #1 of 1 entitled at D16 (pool 3)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D16"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D25"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D25",
+    "available": 1
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02570"
+   },
+   "why": "Platinum customer C5790, promised 2027-04-01; priority #1 of 3 entitled at D25 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D25"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D26"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D26",
+    "available": 2
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02593"
+   },
+   "why": "Platinum customer C3575, promised 2027-04-02; priority #1 of 1 entitled at D26 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D26"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D27"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D27",
+    "available": 1
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02615"
+   },
+   "why": "Gold customer C1676, promised 2027-04-04; priority #1 of 1 entitled at D27 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D27"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D31"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D31",
+    "available": 2
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02587"
+   },
+   "why": "Gold customer C6144, promised 2027-04-02; priority #1 of 1 entitled at D31 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D31"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D34"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D34",
+    "available": 1
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02641"
+   },
+   "why": "Gold customer C5173, promised 2027-04-04; priority #1 of 1 entitled at D34 (pool 1)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D34"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.loaner_availability",
+   "args": {
+    "dealer_id": "D44"
+   },
+   "why": "check pool before assigning",
+   "incidents": [],
+   "ok": true,
+   "result": {
+    "dealer_id": "D44",
+    "available": 2
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02645"
+   },
+   "why": "Platinum customer C5310, promised 2027-04-05; priority #1 of 2 entitled at D44 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D44"
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.assign_loaner",
+   "args": {
+    "customer_order_id": "CO-02598"
+   },
+   "why": "Gold customer C4530, promised 2027-04-04; priority #2 of 2 entitled at D44 (pool 2)",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true,
+    "dealer_id": "D44"
+   }
+  }
+ ],
+ "settings": {
+  "transfer_anchor": "original_date",
+  "llm_backend": "ollama",
+  "llm_model": "qwen2.5:1.5b",
+  "llm_url": null
+ },
+ "human_review": [],
+ "dates_plain": {
+  "dates": [
+   {
+    "incident": "supplier_delay",
+    "phrase": "Monday Mar 29",
+    "role": "original ETA",
+    "date": "Mon 2027-03-29",
+    "alternative": []
+   },
+   {
+    "incident": "supplier_delay",
+    "phrase": "Thursday Apr 1",
+    "role": "new ETA",
+    "date": "Thu 2027-04-01",
+    "alternative": []
+   }
+  ],
+  "why": ""
+ },
+ "loaners": [
+  {
+   "dealer": "D02",
+   "dealer_name": "Bayou Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D03",
+   "dealer_name": "Alamo Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D04",
+   "dealer_name": "Gulf Coast Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 2,
+   "standard_orders": 1,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02628",
+     "customer": "C6557",
+     "tier": "Gold",
+     "promised": "2027-04-03",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D06",
+   "dealer_name": "Smoky Mountain Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  },
+  {
+   "dealer": "D08",
+   "dealer_name": "Magnolia Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 6,
+   "standard_orders": 5,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02590",
+     "customer": "C1928",
+     "tier": "Gold",
+     "promised": "2027-04-01",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D12",
+   "dealer_name": "Delta Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  },
+  {
+   "dealer": "D15",
+   "dealer_name": "Hill Country Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D16",
+   "dealer_name": "Pelican Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 2,
+   "standard_orders": 1,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02640",
+     "customer": "C3035",
+     "tier": "Platinum",
+     "promised": "2027-04-04",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D20",
+   "dealer_name": "Sooner Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  },
+  {
+   "dealer": "D21",
+   "dealer_name": "Piney Woods Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D23",
+   "dealer_name": "Lakeshore Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  },
+  {
+   "dealer": "D24",
+   "dealer_name": "Rocket City Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D25",
+   "dealer_name": "Tupelo Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 7,
+   "standard_orders": 4,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02570",
+     "customer": "C5790",
+     "tier": "Platinum",
+     "promised": "2027-04-01",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    },
+    {
+     "rank": 2,
+     "customer_order": "CO-02568",
+     "customer": "C0740",
+     "tier": "Gold",
+     "promised": "2027-04-01",
+     "incident": "I1:supplier_delay",
+     "loaner": false
+    },
+    {
+     "rank": 3,
+     "customer_order": "CO-02644",
+     "customer": "C5679",
+     "tier": "Gold",
+     "promised": "2027-04-03",
+     "incident": "I1:supplier_delay",
+     "loaner": false
+    }
+   ]
+  },
+  {
+   "dealer": "D26",
+   "dealer_name": "Coastal Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 2,
+   "standard_orders": 1,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02593",
+     "customer": "C3575",
+     "tier": "Platinum",
+     "promised": "2027-04-02",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D27",
+   "dealer_name": "Blue Ridge Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 1,
+   "standard_orders": 0,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02615",
+     "customer": "C1676",
+     "tier": "Gold",
+     "promised": "2027-04-04",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D30",
+   "dealer_name": "Heartland Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D31",
+   "dealer_name": "Hoosier Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 1,
+   "standard_orders": 0,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02587",
+     "customer": "C6144",
+     "tier": "Gold",
+     "promised": "2027-04-02",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D34",
+   "dealer_name": "Tar Heel Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 2,
+   "standard_orders": 1,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02641",
+     "customer": "C5173",
+     "tier": "Gold",
+     "promised": "2027-04-04",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D35",
+   "dealer_name": "Queen City Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  },
+  {
+   "dealer": "D36",
+   "dealer_name": "Lowcountry Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D38",
+   "dealer_name": "Steel City Wacky Wheels",
+   "pool": 1,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D44",
+   "dealer_name": "Hill City Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 4,
+   "standard_orders": 2,
+   "entitled": [
+    {
+     "rank": 1,
+     "customer_order": "CO-02645",
+     "customer": "C5310",
+     "tier": "Platinum",
+     "promised": "2027-04-05",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    },
+    {
+     "rank": 2,
+     "customer_order": "CO-02598",
+     "customer": "C4530",
+     "tier": "Gold",
+     "promised": "2027-04-04",
+     "incident": "I1:supplier_delay",
+     "loaner": true
+    }
+   ]
+  },
+  {
+   "dealer": "D45",
+   "dealer_name": "Border Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 1,
+   "standard_orders": 1,
+   "entitled": []
+  },
+  {
+   "dealer": "D46",
+   "dealer_name": "Windy Wacky Wheels",
+   "pool": 2,
+   "affected_orders": 3,
+   "standard_orders": 3,
+   "entitled": []
+  },
+  {
+   "dealer": "D47",
+   "dealer_name": "Cardinal Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 3,
+   "standard_orders": 3,
+   "entitled": []
+  },
+  {
+   "dealer": "D50",
+   "dealer_name": "Ridge Wacky Wheels",
+   "pool": 3,
+   "affected_orders": 2,
+   "standard_orders": 2,
+   "entitled": []
+  }
+ ],
+ "moves": [
+  {
+   "po": "PO-0436",
+   "model": "SUMMIT",
+   "from": [
+    "P_AL",
+    "2027-03-29"
+   ],
+   "to": [
+    "P_AL",
+    "2027-04-01"
+   ],
+   "type": "reschedule",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "PO-0436 (SUMMIT) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (4/5 used after move)"
+  },
+  {
+   "po": "PO-0438",
+   "model": "VOYAGER",
+   "from": [
+    "P_AL",
+    "2027-03-29"
+   ],
+   "to": [
+    "P_AL",
+    "2027-04-01"
+   ],
+   "type": "reschedule",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "PO-0438 (VOYAGER) blocked at P_AL on 2027-03-29; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-01 (5/5 used after move)"
+  },
+  {
+   "po": "PO-0439",
+   "model": "SUMMIT",
+   "from": [
+    "P_AL",
+    "2027-03-30"
+   ],
+   "to": [
+    "P_AL",
+    "2027-04-02"
+   ],
+   "type": "reschedule",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "PO-0439 (SUMMIT) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (4/5 used after move)"
+  },
+  {
+   "po": "PO-0441",
+   "model": "VOYAGER",
+   "from": [
+    "P_AL",
+    "2027-03-30"
+   ],
+   "to": [
+    "P_AL",
+    "2027-04-02"
+   ],
+   "type": "reschedule",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "PO-0441 (VOYAGER) blocked at P_AL on 2027-03-30; earliest free P_AL slot on/after restart 2027-04-01 is 2027-04-02 (5/5 used after move)"
+  },
+  {
+   "po": "PO-0442",
+   "model": "SUMMIT",
+   "from": [
+    "P_AL",
+    "2027-03-31"
+   ],
+   "to": [
+    "P_KY",
+    "2027-03-31"
+   ],
+   "type": "transfer",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_KY builds SUMMIT and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)"
+  },
+  {
+   "po": "PO-0444",
+   "model": "VOYAGER",
+   "from": [
+    "P_AL",
+    "2027-03-31"
+   ],
+   "to": [
+    "P_IN",
+    "2027-03-31"
+   ],
+   "type": "transfer",
+   "incidents": [
+    "I1:supplier_delay"
+   ],
+   "why": "no free P_AL slot from 2027-04-01 to 2027-04-02; P_IN builds VOYAGER and has a free slot on 2027-03-31 (earliest on/after original_date 2027-03-31)"
+  }
+ ],
+ "unplaced": [],
+ "escalation": "",
+ "summary": "Supplier delay: shipment SH-0256 (CAM-360 for P_AL) moves 2027-03-29 -> 2027-04-01; 6 build(s) needing the part are blocked. Moved 6 production order(s) (2 transferred). Actions: 10 x crm.assign_loaner, 26 x dealer.notify, 4 x mes.reschedule, 2 x mes.transfer.",
+ "audit": [
+  {
+   "t": 1794101068.688,
+   "agent": "Coordinator",
+   "step": "receive",
+   "detail": "supplier email: Quick heads up from Orbit: the surround-view cameras run for Huntsville can't make it Monday Mar 29. Carrier says Thursd"
+  },
+  {
+   "t": 1794101070.657,
+   "agent": "Coordinator",
+   "step": "read",
+   "detail": "llm:qwen2.5:1.5b: ['plant_outage']; rules: ['supplier_delay']"
+  },
+  {
+   "t": 1794101070.657,
+   "agent": "Coordinator",
+   "step": "ground",
+   "detail": "category=['supplier_delay']; 1 grounded incident(s); 0 escalation reason(s); relative dates in this message read the same under every convention"
+  },
+  {
+   "t": 1794101070.657,
+   "agent": "SupplyChainPlanner",
+   "step": "plan",
+   "detail": "6 moves (2 transfers), 0 unplaceable",
+   "unplaced": []
+  },
+  {
+   "t": 1794101070.657,
+   "agent": "DealerNetwork",
+   "step": "plan",
+   "detail": "26 dealer notices covering 54 customer orders"
+  },
+  {
+   "t": 1794101070.657,
+   "agent": "CustomerCareQuality",
+   "step": "plan",
+   "detail": "12 entitled Platinum/Gold customers at 9 dealers; 10 loaners fit the pools"
+  },
+  {
+   "t": 1794101070.658,
+   "agent": "Coordinator",
+   "step": "prove",
+   "detail": "dry run on twin: 55 calls, 13/13 invariants hold"
+  },
+  {
+   "t": 1794101070.687,
+   "agent": "Coordinator",
+   "step": "done",
+   "detail": "Supplier delay: shipment SH-0256 (CAM-360 for P_AL) moves 2027-03-29 -> 2027-04-01; 6 build(s) needing the part are blocked. Moved 6 production order(s) (2 transferred). Actions: 10 x crm.assign_loane"
+  }
+ ],
+ "stats": {
+  "seconds": 2.0,
+  "live_calls": 55,
+  "failed_live_calls": 0,
+  "blocked_by_catalog": 0,
+  "reads": 13,
+  "writes": 42
+ }
+}

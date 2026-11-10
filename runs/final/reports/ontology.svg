@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" font-family="sans-serif" font-size="11">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#888"/></marker></defs>
+<line x1="450" y1="80" x2="638" y2="510" stroke="#888" marker-end="url(#a)"/>
+<text x="552" y="303" fill="#555" text-anchor="middle">SHIPS</text>
+<line x1="654" y1="527" x2="601" y2="141" stroke="#888" marker-end="url(#a)"/>
+<text x="625" y="325" fill="#555" text-anchor="middle">CARRIES</text>
+<line x1="654" y1="527" x2="701" y2="405" stroke="#888" marker-end="url(#a)"/>
+<text x="686" y="458" fill="#555" text-anchor="middle">DELIVERS_TO</text>
+<line x1="450" y1="80" x2="521" y2="591" stroke="#888" marker-end="url(#a)"/>
+<text x="488" y="345" fill="#555" text-anchor="middle">MADE</text>
+<line x1="526" y1="609" x2="591" y2="141" stroke="#888" marker-end="url(#a)"/>
+<text x="561" y="366" fill="#555" text-anchor="middle">OF_PART</text>
+<line x1="526" y1="609" x2="692" y2="402" stroke="#888" marker-end="url(#a)"/>
+<text x="622" y="499" fill="#555" text-anchor="middle">INSTALLED_AT</text>
+<line x1="526" y1="609" x2="412" y2="609" stroke="#888" marker-end="url(#a)"/>
+<text x="450" y="609" fill="#555" text-anchor="middle">INSTALLED_IN</text>
+<line x1="696" y1="238" x2="621" y2="136" stroke="#888" marker-end="url(#a)"/>
+<text x="646" y="180" fill="#555" text-anchor="middle">USES</text>
+<line x1="717" y1="388" x2="701" y2="256" stroke="#888" marker-end="url(#a)"/>
+<text x="706" y="313" fill="#555" text-anchor="middle">CAN_BUILD</text>
+<line x1="374" y1="609" x2="685" y2="398" stroke="#888" marker-end="url(#a)"/>
+<text x="546" y="499" fill="#555" text-anchor="middle">AT_PLANT</text>
+<line x1="374" y1="609" x2="671" y2="251" stroke="#888" marker-end="url(#a)"/>
+<text x="535" y="423" fill="#555" text-anchor="middle">BUILDS</text>
+<line x1="246" y1="527" x2="342" y2="599" stroke="#888" marker-end="url(#a)"/>
+<text x="310" y="568" fill="#555" text-anchor="middle">FULFILLED_BY</text>
+<line x1="246" y1="527" x2="199" y2="405" stroke="#888" marker-end="url(#a)"/>
+<text x="214" y="458" fill="#555" text-anchor="middle">PLACED_BY</text>
+<line x1="246" y1="527" x2="210" y2="256" stroke="#888" marker-end="url(#a)"/>
+<text x="225" y="382" fill="#555" text-anchor="middle">SOLD_THROUGH</text>
+<line x1="374" y1="609" x2="309" y2="141" stroke="#888" marker-end="url(#a)"/>
+<text x="339" y="366" fill="#555" text-anchor="middle">PRODUCED</text>
+<line x1="304" y1="123" x2="229" y2="224" stroke="#888" marker-end="url(#a)"/>
+<text x="254" y="180" fill="#555" text-anchor="middle">AT_DEALER</text>
+<line x1="304" y1="123" x2="199" y2="372" stroke="#888" marker-end="url(#a)"/>
+<text x="243" y="256" fill="#555" text-anchor="middle">OWNED_BY</text>
+<rect x="402" y="64" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="450" y="84" text-anchor="middle" font-weight="bold">Supplier</text>
+<rect x="548" y="107" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="596" y="127" text-anchor="middle" font-weight="bold">Part</text>
+<rect x="648" y="222" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="696" y="242" text-anchor="middle" font-weight="bold">Model</text>
+<rect x="669" y="372" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="717" y="392" text-anchor="middle" font-weight="bold">Plant</text>
+<rect x="606" y="511" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="654" y="531" text-anchor="middle" font-weight="bold">Shipment</text>
+<rect x="478" y="593" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="526" y="613" text-anchor="middle" font-weight="bold">Lot</text>
+<rect x="326" y="593" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="374" y="613" text-anchor="middle" font-weight="bold">ProductionOrder</text>
+<rect x="198" y="511" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="246" y="531" text-anchor="middle" font-weight="bold">CustomerOrder</text>
+<rect x="135" y="372" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="183" y="392" text-anchor="middle" font-weight="bold">Customer</text>
+<rect x="156" y="222" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="204" y="242" text-anchor="middle" font-weight="bold">Dealer</text>
+<rect x="256" y="107" width="96" height="32" rx="6" fill="#e8f0fe" stroke="#2b5fb3"/><text x="304" y="127" text-anchor="middle" font-weight="bold">Vehicle</text>
+</svg>

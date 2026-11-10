@@ -1,0 +1,5 @@
+streamlit>=1.40
+altair>=5
+pandas>=2
+networkx>=3
+pytest>=8

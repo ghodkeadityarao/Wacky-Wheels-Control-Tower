@@ -1,0 +1,5331 @@
+{
+ "event": {
+  "event_id": "E-14",
+  "received_at": "2027-03-08T10:58:00",
+  "source": "ops chat",
+  "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect."
+ },
+ "readers": {
+  "rules": [
+   {
+    "source": "rules",
+    "segment": 0,
+    "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect.",
+    "kind": "quality_hold",
+    "plants": [
+     "P_TX"
+    ],
+    "parts": [
+     "HARN-B"
+    ],
+    "suppliers": [
+     "SUP-07"
+    ],
+    "shipments": [],
+    "lots": [],
+    "dates": {
+     "start": {
+      "phrase": "Monday Feb 22",
+      "candidates": {
+       "explicit": "2027-02-22"
+      },
+      "note": ""
+     },
+     "end": {
+      "phrase": "Wednesday Feb 24",
+      "candidates": {
+       "explicit": "2027-02-24"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {
+     "quality_hold": [
+      "quality",
+      "contaminat",
+      "suspect"
+     ]
+    },
+    "unconfirmed_cues": [],
+    "rationale": "cues ['quality', 'contaminat', 'suspect']"
+   }
+  ],
+  "llm:qwen2.5:1.5b": [
+   {
+    "source": "llm:qwen2.5:1.5b",
+    "segment": 0,
+    "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect.",
+    "kind": "quality_hold",
+    "plants": [],
+    "parts": [],
+    "suppliers": [],
+    "shipments": [],
+    "lots": [],
+    "dates": {
+     "start": {
+      "phrase": "2027-02-22",
+      "candidates": {
+       "explicit": "2027-02-22"
+      },
+      "note": ""
+     },
+     "end": {
+      "phrase": "2027-02-24",
+      "candidates": {
+       "explicit": "2027-02-24"
+      },
+      "note": ""
+     },
+     "original_eta": {
+      "phrase": "Monday Feb 22",
+      "candidates": {
+       "explicit": "2027-02-22"
+      },
+      "note": ""
+     },
+     "new_eta": {
+      "phrase": "Wednesday Feb 24",
+      "candidates": {
+       "explicit": "2027-02-24"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {},
+    "unconfirmed_cues": [],
+    "rationale": "The wiring harness sent to the Texas plant was found to have moisture contamination, which is a quality issue that affects vehicles built during the specified time frame."
+   }
+  ]
+ },
+ "verdict": {
+  "category": [
+   "quality_hold"
+  ],
+  "convention": "next_week",
+  "convention_note": "relative dates in this message read the same under every convention",
+  "incidents": [
+   {
+    "kind": "quality_hold",
+    "key": [
+     "quality_hold",
+     "LOT-0017"
+    ],
+    "bindings": {
+     "lots": [
+      "LOT-0017"
+     ],
+     "part": "HARN-B",
+     "plant": "P_TX",
+     "supplier": "SUP-07",
+     "first": "2027-02-22",
+     "last": "2027-02-24",
+     "date_readings": {
+      "start": "explicit",
+      "end": "explicit"
+     }
+    },
+    "checks": [
+     "lot(s) LOT-0017 (SUP-07 HARN-B @ P_TX 2027-02-22..2027-02-24)",
+     "part HARN-B at plant P_TX",
+     "supplier SUP-07"
+    ],
+    "convention": "next_week",
+    "source": "rules",
+    "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect."
+   }
+  ],
+  "escalations": [],
+  "noise_reasons": [],
+  "conflicts": [],
+  "review": [],
+  "convention_reason": {
+   "basis": "same"
+  },
+  "readings": [
+   {
+    "reading": {
+     "source": "rules",
+     "segment": 0,
+     "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect.",
+     "kind": "quality_hold",
+     "plants": [
+      "P_TX"
+     ],
+     "parts": [
+      "HARN-B"
+     ],
+     "suppliers": [
+      "SUP-07"
+     ],
+     "shipments": [],
+     "lots": [],
+     "dates": {
+      "start": {
+       "phrase": "Monday Feb 22",
+       "candidates": {
+        "explicit": "2027-02-22"
+       },
+       "note": ""
+      },
+      "end": {
+       "phrase": "Wednesday Feb 24",
+       "candidates": {
+        "explicit": "2027-02-24"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {
+      "quality_hold": [
+       "quality",
+       "contaminat",
+       "suspect"
+      ]
+     },
+     "unconfirmed_cues": [],
+     "rationale": "cues ['quality', 'contaminat', 'suspect']"
+    },
+    "status": "grounded",
+    "grounded": [
+     {
+      "kind": "quality_hold",
+      "key": [
+       "quality_hold",
+       "LOT-0017"
+      ],
+      "bindings": {
+       "lots": [
+        "LOT-0017"
+       ],
+       "part": "HARN-B",
+       "plant": "P_TX",
+       "supplier": "SUP-07",
+       "first": "2027-02-22",
+       "last": "2027-02-24",
+       "date_readings": {
+        "start": "explicit",
+        "end": "explicit"
+       }
+      },
+      "checks": [
+       "lot(s) LOT-0017 (SUP-07 HARN-B @ P_TX 2027-02-22..2027-02-24)",
+       "part HARN-B at plant P_TX",
+       "supplier SUP-07"
+      ],
+      "convention": "next_week",
+      "source": "rules",
+      "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect."
+     }
+    ],
+    "reasons": []
+   },
+   {
+    "reading": {
+     "source": "llm:qwen2.5:1.5b",
+     "segment": 0,
+     "text": "Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything built Monday Feb 22 through Wednesday Feb 24 is suspect.",
+     "kind": "quality_hold",
+     "plants": [],
+     "parts": [],
+     "suppliers": [],
+     "shipments": [],
+     "lots": [],
+     "dates": {
+      "start": {
+       "phrase": "2027-02-22",
+       "candidates": {
+        "explicit": "2027-02-22"
+       },
+       "note": ""
+      },
+      "end": {
+       "phrase": "2027-02-24",
+       "candidates": {
+        "explicit": "2027-02-24"
+       },
+       "note": ""
+      },
+      "original_eta": {
+       "phrase": "Monday Feb 22",
+       "candidates": {
+        "explicit": "2027-02-22"
+       },
+       "note": ""
+      },
+      "new_eta": {
+       "phrase": "Wednesday Feb 24",
+       "candidates": {
+        "explicit": "2027-02-24"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {},
+     "unconfirmed_cues": [],
+     "rationale": "The wiring harness sent to the Texas plant was found to have moisture contamination, which is a quality issue that affects vehicles built during the specified time frame."
+    },
+    "status": "failed",
+    "grounded": [],
+    "reasons": [
+     "quality report without a specific part and plant"
+    ]
+   }
+  ]
+ },
+ "category": [
+  "quality_hold"
+ ],
+ "incidents": [
+  {
+   "id": "I1:quality_hold",
+   "kind": "quality_hold",
+   "bindings": {
+    "lots": [
+     "LOT-0017"
+    ],
+    "part": "HARN-B",
+    "plant": "P_TX",
+    "supplier": "SUP-07",
+    "first": "2027-02-22",
+    "last": "2027-02-24",
+    "date_readings": {
+     "start": "explicit",
+     "end": "explicit"
+    }
+   },
+   "grounding_checks": [
+    "lot(s) LOT-0017 (SUP-07 HARN-B @ P_TX 2027-02-22..2027-02-24)",
+    "part HARN-B at plant P_TX",
+    "supplier SUP-07"
+   ],
+   "path_schema": [
+    "Lot",
+    "ProductionOrder",
+    "Vehicle",
+    "Dealer / Customer"
+   ],
+   "example_path": [
+    "Lot:LOT-0017",
+    "ProductionOrder:PO-0002",
+    "Vehicle:AUR0000026",
+    "Customer:C3821"
+   ],
+   "evidence_edges": [
+    [
+     "Lot:LOT-0017",
+     "OF_PART",
+     "Part:HARN-B"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0002"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000026"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000027"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000028"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000029"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000030"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000031"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000032"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000033"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000034"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000035"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000036"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000037"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000038"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000039"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000040"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000041"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000042"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000043"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000044"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000045"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000046"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000047"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000048"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000049"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000050"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000051"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000052"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000053"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000054"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000055"
+    ],
+    [
+     "ProductionOrder:PO-0002",
+     "PRODUCED",
+     "Vehicle:AUR0000056"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0005"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000106"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000107"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000108"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000109"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000110"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000111"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000112"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000113"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000114"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000115"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000116"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000117"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000118"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000119"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000120"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000121"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000122"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000123"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000124"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000125"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000126"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000127"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000128"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000129"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000130"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000131"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000132"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000133"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000134"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000135"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000136"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000137"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000138"
+    ],
+    [
+     "ProductionOrder:PO-0005",
+     "PRODUCED",
+     "Vehicle:AUR0000139"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0008"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000205"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000206"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000207"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000208"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000209"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000210"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000211"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000212"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000213"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000214"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000215"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000216"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000217"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000218"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000219"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000220"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000221"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000222"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000223"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000224"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000225"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000226"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000227"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000228"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000229"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000230"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000231"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000232"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000233"
+    ],
+    [
+     "ProductionOrder:PO-0008",
+     "PRODUCED",
+     "Vehicle:AUR0000234"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0001"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000001"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000002"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000003"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000004"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000005"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000006"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000007"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000008"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000009"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000010"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000011"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000012"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000013"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000014"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000015"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000016"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000017"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000018"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000019"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000020"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000021"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000022"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000023"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000024"
+    ],
+    [
+     "ProductionOrder:PO-0001",
+     "PRODUCED",
+     "Vehicle:AUR0000025"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0004"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000082"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000083"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000084"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000085"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000086"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000087"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000088"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000089"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000090"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000091"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000092"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000093"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000094"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000095"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000096"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000097"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000098"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000099"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000100"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000101"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000102"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000103"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000104"
+    ],
+    [
+     "ProductionOrder:PO-0004",
+     "PRODUCED",
+     "Vehicle:AUR0000105"
+    ],
+    [
+     "Lot:LOT-0017",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0007"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000169"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000170"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000171"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000172"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000173"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000174"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000175"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000176"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000177"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000178"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000179"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000180"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000181"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000182"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000183"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000184"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000185"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000186"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000187"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000188"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000189"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000190"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000191"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000192"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000193"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000194"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000195"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000196"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000197"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000198"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000199"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000200"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000201"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000202"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000203"
+    ],
+    [
+     "ProductionOrder:PO-0007",
+     "PRODUCED",
+     "Vehicle:AUR0000204"
+    ]
+   ],
+   "affected_production_orders": [],
+   "lots": [
+    "LOT-0017"
+   ],
+   "vehicles": 180,
+   "blocked": null,
+   "restart": null
+  }
+ ],
+ "plan": [
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "quality.hold_lot",
+   "args": {
+    "lot_id": "LOT-0017"
+   },
+   "why": "lot LOT-0017 (SUP-07 HARN-B @ P_TX) reported defective",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D02",
+    "vins": [
+     "AUR0000083",
+     "AUR0000220"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D03",
+    "vins": [
+     "AUR0000008",
+     "AUR0000028",
+     "AUR0000090",
+     "AUR0000226"
+    ]
+   },
+   "why": "4 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D04",
+    "vins": [
+     "AUR0000085",
+     "AUR0000191"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D06",
+    "vins": [
+     "AUR0000024",
+     "AUR0000027",
+     "AUR0000052",
+     "AUR0000082",
+     "AUR0000188"
+    ]
+   },
+   "why": "5 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D07",
+    "vins": [
+     "AUR0000020",
+     "AUR0000097"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D08",
+    "vins": [
+     "AUR0000013",
+     "AUR0000117",
+     "AUR0000131",
+     "AUR0000171",
+     "AUR0000215"
+    ]
+   },
+   "why": "5 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D10",
+    "vins": [
+     "AUR0000210",
+     "AUR0000229"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D12",
+    "vins": [
+     "AUR0000046"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D13",
+    "vins": [
+     "AUR0000047",
+     "AUR0000198"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D14",
+    "vins": [
+     "AUR0000120",
+     "AUR0000195"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D16",
+    "vins": [
+     "AUR0000136"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D17",
+    "vins": [
+     "AUR0000107"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D19",
+    "vins": [
+     "AUR0000105"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D20",
+    "vins": [
+     "AUR0000042",
+     "AUR0000051"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D21",
+    "vins": [
+     "AUR0000088",
+     "AUR0000089",
+     "AUR0000222"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D22",
+    "vins": [
+     "AUR0000200",
+     "AUR0000225"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D23",
+    "vins": [
+     "AUR0000010",
+     "AUR0000173",
+     "AUR0000230"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D25",
+    "vins": [
+     "AUR0000011",
+     "AUR0000134",
+     "AUR0000178",
+     "AUR0000187",
+     "AUR0000204",
+     "AUR0000207"
+    ]
+   },
+   "why": "6 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D26",
+    "vins": [
+     "AUR0000017",
+     "AUR0000096"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D27",
+    "vins": [
+     "AUR0000003",
+     "AUR0000186"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D28",
+    "vins": [
+     "AUR0000022"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D29",
+    "vins": [
+     "AUR0000034"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D31",
+    "vins": [
+     "AUR0000031",
+     "AUR0000132"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D32",
+    "vins": [
+     "AUR0000100",
+     "AUR0000103",
+     "AUR0000169",
+     "AUR0000201"
+    ]
+   },
+   "why": "4 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D33",
+    "vins": [
+     "AUR0000111"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D34",
+    "vins": [
+     "AUR0000006",
+     "AUR0000019",
+     "AUR0000030"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D36",
+    "vins": [
+     "AUR0000053",
+     "AUR0000172"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D37",
+    "vins": [
+     "AUR0000015"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D38",
+    "vins": [
+     "AUR0000174",
+     "AUR0000209"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D39",
+    "vins": [
+     "AUR0000025",
+     "AUR0000123"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D43",
+    "vins": [
+     "AUR0000126",
+     "AUR0000137",
+     "AUR0000217"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D44",
+    "vins": [
+     "AUR0000109",
+     "AUR0000110"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D45",
+    "vins": [
+     "AUR0000002",
+     "AUR0000023",
+     "AUR0000035",
+     "AUR0000121",
+     "AUR0000190",
+     "AUR0000194",
+     "AUR0000231"
+    ]
+   },
+   "why": "7 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D46",
+    "vins": [
+     "AUR0000007",
+     "AUR0000093",
+     "AUR0000197"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D47",
+    "vins": [
+     "AUR0000044"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D48",
+    "vins": [
+     "AUR0000219"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0130",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000032 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0226",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000212 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0419",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000114 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0459",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000116 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0630",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000037 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0641",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000099 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0643",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000203 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0664",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000177 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0665",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000128 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0789",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000021 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0804",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000227 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0832",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000005 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0871",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000206 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1006",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000179 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1218",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000001 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1233",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000095 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1244",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000055 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1367",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000130 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1373",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000127 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1380",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000183 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1508",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000113 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1516",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000102 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1610",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000133 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1629",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000233 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1660",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000048 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1665",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000214 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1735",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000036 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1751",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000018 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1799",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000234 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1800",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000086 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1808",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000138 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1848",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000232 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1876",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000108 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2123",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000223 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2480",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000135 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2499",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000115 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2655",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000119 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2789",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000012 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2919",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000216 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2945",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000228 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3102",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000189 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3196",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000098 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3197",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000112 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3200",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000122 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3277",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000208 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3512",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000218 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3527",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000038 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3634",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000175 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3788",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000221 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3821",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000026 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3896",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000040 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3913",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000094 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3949",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000016 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4029",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000050 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4064",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000039 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4203",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000106 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4248",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000125 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4261",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000182 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4439",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000084 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4449",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000199 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4598",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000139 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4614",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000043 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4711",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000056 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4961",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000101 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5019",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000004 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5077",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000224 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5125",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000192 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5353",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000033 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5356",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000129 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5360",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000185 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5388",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000014 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5443",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000104 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5533",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000202 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5603",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000045 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5654",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000087 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5677",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000091 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5701",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000118 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5751",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000181 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5898",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000184 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6091",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000196 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6168",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000054 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6212",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000205 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6288",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000092 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6446",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000124 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6447",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000009 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6448",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000176 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6490",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000213 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6561",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000170 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6563",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000029 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6624",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000049 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6676",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000041 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6796",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000180 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6829",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000193 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6847",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000211 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  }
+ ],
+ "dry_run": {
+  "ok": true,
+  "calls": 131,
+  "checks": [
+   {
+    "check": "no failed calls in dry run",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "moved exactly the affected production orders",
+    "ok": true,
+    "detail": "extra=[] missing=[] (n=0)"
+   },
+   {
+    "check": "no plant-day over capacity",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "no order moved into a disrupted day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "same-plant moves are at/after the restart day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "transfers only when the home plant is full",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "dealer notices list exactly the affected customer orders",
+    "ok": true,
+    "detail": "dealers expected=0 got=0"
+   },
+   {
+    "check": "exactly one notice per dealer",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "loaners match pool limits and priority",
+    "ok": true,
+    "detail": "expected 0 of 0 entitled; got 0"
+   },
+   {
+    "check": "lots held",
+    "ok": true,
+    "detail": "['LOT-0017'] vs ['LOT-0017']"
+   },
+   {
+    "check": "stop-sale exactly the unsold affected vehicles",
+    "ok": true,
+    "detail": "86 vs 86"
+   },
+   {
+    "check": "owners of sold affected vehicles contacted (and nobody else)",
+    "ok": true,
+    "detail": "94 vs 94"
+   },
+   {
+    "check": "at least three kinds of action per real incident",
+    "ok": true,
+    "detail": "['crm.notify_customer', 'dealer.stop_sale', 'quality.hold_lot']"
+   }
+  ]
+ },
+ "executed": [
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "quality.hold_lot",
+   "args": {
+    "lot_id": "LOT-0017"
+   },
+   "why": "lot LOT-0017 (SUP-07 HARN-B @ P_TX) reported defective",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D02",
+    "vins": [
+     "AUR0000083",
+     "AUR0000220"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D03",
+    "vins": [
+     "AUR0000008",
+     "AUR0000028",
+     "AUR0000090",
+     "AUR0000226"
+    ]
+   },
+   "why": "4 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D04",
+    "vins": [
+     "AUR0000085",
+     "AUR0000191"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D06",
+    "vins": [
+     "AUR0000024",
+     "AUR0000027",
+     "AUR0000052",
+     "AUR0000082",
+     "AUR0000188"
+    ]
+   },
+   "why": "5 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D07",
+    "vins": [
+     "AUR0000020",
+     "AUR0000097"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D08",
+    "vins": [
+     "AUR0000013",
+     "AUR0000117",
+     "AUR0000131",
+     "AUR0000171",
+     "AUR0000215"
+    ]
+   },
+   "why": "5 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D10",
+    "vins": [
+     "AUR0000210",
+     "AUR0000229"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D12",
+    "vins": [
+     "AUR0000046"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D13",
+    "vins": [
+     "AUR0000047",
+     "AUR0000198"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D14",
+    "vins": [
+     "AUR0000120",
+     "AUR0000195"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D16",
+    "vins": [
+     "AUR0000136"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D17",
+    "vins": [
+     "AUR0000107"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D19",
+    "vins": [
+     "AUR0000105"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D20",
+    "vins": [
+     "AUR0000042",
+     "AUR0000051"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D21",
+    "vins": [
+     "AUR0000088",
+     "AUR0000089",
+     "AUR0000222"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D22",
+    "vins": [
+     "AUR0000200",
+     "AUR0000225"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D23",
+    "vins": [
+     "AUR0000010",
+     "AUR0000173",
+     "AUR0000230"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D25",
+    "vins": [
+     "AUR0000011",
+     "AUR0000134",
+     "AUR0000178",
+     "AUR0000187",
+     "AUR0000204",
+     "AUR0000207"
+    ]
+   },
+   "why": "6 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D26",
+    "vins": [
+     "AUR0000017",
+     "AUR0000096"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D27",
+    "vins": [
+     "AUR0000003",
+     "AUR0000186"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D28",
+    "vins": [
+     "AUR0000022"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D29",
+    "vins": [
+     "AUR0000034"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D31",
+    "vins": [
+     "AUR0000031",
+     "AUR0000132"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D32",
+    "vins": [
+     "AUR0000100",
+     "AUR0000103",
+     "AUR0000169",
+     "AUR0000201"
+    ]
+   },
+   "why": "4 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D33",
+    "vins": [
+     "AUR0000111"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D34",
+    "vins": [
+     "AUR0000006",
+     "AUR0000019",
+     "AUR0000030"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D36",
+    "vins": [
+     "AUR0000053",
+     "AUR0000172"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D37",
+    "vins": [
+     "AUR0000015"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D38",
+    "vins": [
+     "AUR0000174",
+     "AUR0000209"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D39",
+    "vins": [
+     "AUR0000025",
+     "AUR0000123"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D43",
+    "vins": [
+     "AUR0000126",
+     "AUR0000137",
+     "AUR0000217"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D44",
+    "vins": [
+     "AUR0000109",
+     "AUR0000110"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D45",
+    "vins": [
+     "AUR0000002",
+     "AUR0000023",
+     "AUR0000035",
+     "AUR0000121",
+     "AUR0000190",
+     "AUR0000194",
+     "AUR0000231"
+    ]
+   },
+   "why": "7 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D46",
+    "vins": [
+     "AUR0000007",
+     "AUR0000093",
+     "AUR0000197"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D47",
+    "vins": [
+     "AUR0000044"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D48",
+    "vins": [
+     "AUR0000219"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0017",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0130",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000032 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0226",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000212 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0419",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000114 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0459",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000116 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0630",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000037 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0641",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000099 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0643",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000203 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0664",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000177 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0665",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000128 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0789",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000021 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0804",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000227 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0832",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000005 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0871",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000206 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1006",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000179 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1218",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000001 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1233",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000095 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1244",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000055 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1367",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000130 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1373",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000127 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1380",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000183 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1508",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000113 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1516",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000102 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1610",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000133 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1629",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000233 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1660",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000048 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1665",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000214 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1735",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000036 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1751",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000018 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1799",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000234 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1800",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000086 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1808",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000138 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1848",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000232 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1876",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000108 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2123",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000223 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2480",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000135 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2499",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000115 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2655",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000119 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2789",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000012 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2919",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000216 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2945",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000228 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3102",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000189 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3196",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000098 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3197",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000112 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3200",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000122 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3277",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000208 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3512",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000218 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3527",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000038 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3634",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000175 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3788",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000221 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3821",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000026 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3896",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000040 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3913",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000094 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3949",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000016 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4029",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000050 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4064",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000039 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4203",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000106 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4248",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000125 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4261",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000182 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4439",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000084 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4449",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000199 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4598",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000139 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4614",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000043 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4711",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000056 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4961",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000101 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5019",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000004 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5077",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000224 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5125",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000192 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5353",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000033 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5356",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000129 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5360",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000185 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5388",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000014 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5443",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000104 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5533",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000202 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5603",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000045 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5654",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000087 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5677",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000091 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5701",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000118 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5751",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000181 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5898",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000184 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6091",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000196 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6168",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000054 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6212",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000205 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6288",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000092 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6446",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000124 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6447",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000009 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6448",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000176 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6490",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000213 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6561",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000170 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6563",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000029 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6624",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000049 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6676",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000041 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6796",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000180 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6829",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000193 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6847",
+    "message": "Safety/quality notice: your vehicle(s) AUR0000211 were built with HARN-B from lot LOT-0017, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  }
+ ],
+ "settings": {
+  "transfer_anchor": "original_date",
+  "llm_backend": "ollama",
+  "llm_model": "qwen2.5:1.5b",
+  "llm_url": null
+ },
+ "human_review": [],
+ "dates_plain": {
+  "dates": [
+   {
+    "incident": "quality_hold",
+    "phrase": "Monday Feb 22",
+    "role": "first day",
+    "date": "Mon 2027-02-22",
+    "alternative": []
+   },
+   {
+    "incident": "quality_hold",
+    "phrase": "Wednesday Feb 24",
+    "role": "last day",
+    "date": "Wed 2027-02-24",
+    "alternative": []
+   }
+  ],
+  "why": ""
+ },
+ "loaners": [],
+ "moves": [],
+ "unplaced": [],
+ "escalation": "",
+ "summary": "Quality hold on LOT-0017 (HARN-B @ P_TX, built 2027-02-22..2027-02-24); 180 vehicles affected. Actions: 94 x crm.notify_customer, 36 x dealer.stop_sale, 1 x quality.hold_lot.",
+ "audit": [
+  {
+   "t": 1794101077.348,
+   "agent": "Coordinator",
+   "step": "receive",
+   "detail": "ops chat: Quality alert: Atlas says the heavy-duty wiring harness sent to the Texas plant had a moisture contamination. Anything b"
+  },
+  {
+   "t": 1794101079.551,
+   "agent": "Coordinator",
+   "step": "read",
+   "detail": "llm:qwen2.5:1.5b: ['quality_hold']; rules: ['quality_hold']"
+  },
+  {
+   "t": 1794101079.551,
+   "agent": "Coordinator",
+   "step": "ground",
+   "detail": "category=['quality_hold']; 1 grounded incident(s); 0 escalation reason(s); relative dates in this message read the same under every convention"
+  },
+  {
+   "t": 1794101079.552,
+   "agent": "CustomerCareQuality",
+   "step": "plan",
+   "detail": "hold 1 lot(s); contact 94 owners"
+  },
+  {
+   "t": 1794101079.552,
+   "agent": "DealerNetwork",
+   "step": "plan",
+   "detail": "stop-sale at 36 dealers for 86 unsold vehicles"
+  },
+  {
+   "t": 1794101079.553,
+   "agent": "Coordinator",
+   "step": "prove",
+   "detail": "dry run on twin: 131 calls, 13/13 invariants hold"
+  },
+  {
+   "t": 1794101079.607,
+   "agent": "Coordinator",
+   "step": "done",
+   "detail": "Quality hold on LOT-0017 (HARN-B @ P_TX, built 2027-02-22..2027-02-24); 180 vehicles affected. Actions: 94 x crm.notify_customer, 36 x dealer.stop_sale, 1 x quality.hold_lot."
+  }
+ ],
+ "stats": {
+  "seconds": 2.26,
+  "live_calls": 131,
+  "failed_live_calls": 0,
+  "blocked_by_catalog": 0,
+  "reads": 0,
+  "writes": 131
+ }
+}

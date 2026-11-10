@@ -1,0 +1,4086 @@
+{
+ "event": {
+  "event_id": "E-15",
+  "received_at": "2027-03-08T11:15:00",
+  "source": "quality bulletin",
+  "text": "QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld. Place the lot on hold, stop sale of unsold vehicles and contact owners."
+ },
+ "readers": {
+  "rules": [
+   {
+    "source": "rules",
+    "segment": 0,
+    "text": "QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld. Place the lot on hold, stop sale of unsold vehicles and contact owners.",
+    "kind": "quality_hold",
+    "plants": [
+     "P_IN"
+    ],
+    "parts": [
+     "CHIP-IVI"
+    ],
+    "suppliers": [
+     "SUP-12"
+    ],
+    "shipments": [],
+    "lots": [
+     "LOT-0191"
+    ],
+    "dates": {
+     "start": {
+      "phrase": "2027-03-02",
+      "candidates": {
+       "explicit": "2027-03-02"
+      },
+      "note": ""
+     },
+     "end": {
+      "phrase": "2027-03-03",
+      "candidates": {
+       "explicit": "2027-03-03"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {
+     "quality_hold": [
+      "quality",
+      "faulty",
+      "on hold",
+      "bulletin",
+      "weld"
+     ]
+    },
+    "unconfirmed_cues": [],
+    "rationale": "cues ['quality', 'faulty', 'on hold', 'bulletin', 'weld']"
+   }
+  ],
+  "llm:qwen2.5:1.5b": [
+   {
+    "source": "llm:qwen2.5:1.5b",
+    "segment": 0,
+    "text": "Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld.",
+    "kind": "quality_hold",
+    "plants": [],
+    "parts": [],
+    "suppliers": [],
+    "shipments": [],
+    "lots": [],
+    "dates": {
+     "start": {
+      "phrase": "2027-03-02",
+      "candidates": {
+       "explicit": "2027-03-02"
+      },
+      "note": ""
+     },
+     "end": {
+      "phrase": "2027-03-03",
+      "candidates": {
+       "explicit": "2027-03-03"
+      },
+      "note": ""
+     },
+     "original_eta": {
+      "phrase": "2027-03-02",
+      "candidates": {
+       "explicit": "2027-03-02"
+      },
+      "note": ""
+     },
+     "new_eta": {
+      "phrase": "2027-03-04",
+      "candidates": {
+       "explicit": "2027-03-04"
+      },
+      "note": ""
+     }
+    },
+    "vague_parts": [],
+    "kind_cues": {},
+    "unconfirmed_cues": [],
+    "rationale": "A part lot is defective for vehicles built on March 2nd and 3rd."
+   }
+  ]
+ },
+ "verdict": {
+  "category": [
+   "quality_hold"
+  ],
+  "convention": "next_week",
+  "convention_note": "relative dates in this message read the same under every convention",
+  "incidents": [
+   {
+    "kind": "quality_hold",
+    "key": [
+     "quality_hold",
+     "LOT-0191"
+    ],
+    "bindings": {
+     "lots": [
+      "LOT-0191"
+     ],
+     "part": "CHIP-IVI",
+     "plant": "P_IN",
+     "supplier": "SUP-12",
+     "first": "2027-03-02",
+     "last": "2027-03-03",
+     "date_readings": {
+      "start": "explicit",
+      "end": "explicit"
+     }
+    },
+    "checks": [
+     "lot(s) LOT-0191 (SUP-12 CHIP-IVI @ P_IN 2027-03-02..2027-03-03)",
+     "lot part CHIP-IVI matches",
+     "lot plant P_IN matches",
+     "lot supplier SUP-12 matches"
+    ],
+    "convention": "next_week",
+    "source": "rules",
+    "text": "QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld. Place the lot on hold, stop sale of unsold vehicles and contact owners."
+   }
+  ],
+  "escalations": [],
+  "noise_reasons": [],
+  "conflicts": [],
+  "review": [],
+  "convention_reason": {
+   "basis": "same"
+  },
+  "readings": [
+   {
+    "reading": {
+     "source": "rules",
+     "segment": 0,
+     "text": "QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld. Place the lot on hold, stop sale of unsold vehicles and contact owners.",
+     "kind": "quality_hold",
+     "plants": [
+      "P_IN"
+     ],
+     "parts": [
+      "CHIP-IVI"
+     ],
+     "suppliers": [
+      "SUP-12"
+     ],
+     "shipments": [],
+     "lots": [
+      "LOT-0191"
+     ],
+     "dates": {
+      "start": {
+       "phrase": "2027-03-02",
+       "candidates": {
+        "explicit": "2027-03-02"
+       },
+       "note": ""
+      },
+      "end": {
+       "phrase": "2027-03-03",
+       "candidates": {
+        "explicit": "2027-03-03"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {
+      "quality_hold": [
+       "quality",
+       "faulty",
+       "on hold",
+       "bulletin",
+       "weld"
+      ]
+     },
+     "unconfirmed_cues": [],
+     "rationale": "cues ['quality', 'faulty', 'on hold', 'bulletin', 'weld']"
+    },
+    "status": "grounded",
+    "grounded": [
+     {
+      "kind": "quality_hold",
+      "key": [
+       "quality_hold",
+       "LOT-0191"
+      ],
+      "bindings": {
+       "lots": [
+        "LOT-0191"
+       ],
+       "part": "CHIP-IVI",
+       "plant": "P_IN",
+       "supplier": "SUP-12",
+       "first": "2027-03-02",
+       "last": "2027-03-03",
+       "date_readings": {
+        "start": "explicit",
+        "end": "explicit"
+       }
+      },
+      "checks": [
+       "lot(s) LOT-0191 (SUP-12 CHIP-IVI @ P_IN 2027-03-02..2027-03-03)",
+       "lot part CHIP-IVI matches",
+       "lot plant P_IN matches",
+       "lot supplier SUP-12 matches"
+      ],
+      "convention": "next_week",
+      "source": "rules",
+      "text": "QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld. Place the lot on hold, stop sale of unsold vehicles and contact owners."
+     }
+    ],
+    "reasons": []
+   },
+   {
+    "reading": {
+     "source": "llm:qwen2.5:1.5b",
+     "segment": 0,
+     "text": "Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027-03-03 has a faulty weld.",
+     "kind": "quality_hold",
+     "plants": [],
+     "parts": [],
+     "suppliers": [],
+     "shipments": [],
+     "lots": [],
+     "dates": {
+      "start": {
+       "phrase": "2027-03-02",
+       "candidates": {
+        "explicit": "2027-03-02"
+       },
+       "note": ""
+      },
+      "end": {
+       "phrase": "2027-03-03",
+       "candidates": {
+        "explicit": "2027-03-03"
+       },
+       "note": ""
+      },
+      "original_eta": {
+       "phrase": "2027-03-02",
+       "candidates": {
+        "explicit": "2027-03-02"
+       },
+       "note": ""
+      },
+      "new_eta": {
+       "phrase": "2027-03-04",
+       "candidates": {
+        "explicit": "2027-03-04"
+       },
+       "note": ""
+      }
+     },
+     "vague_parts": [],
+     "kind_cues": {},
+     "unconfirmed_cues": [],
+     "rationale": "A part lot is defective for vehicles built on March 2nd and 3rd."
+    },
+    "status": "failed",
+    "grounded": [],
+    "reasons": [
+     "quality report without a specific part and plant"
+    ]
+   }
+  ]
+ },
+ "category": [
+  "quality_hold"
+ ],
+ "incidents": [
+  {
+   "id": "I1:quality_hold",
+   "kind": "quality_hold",
+   "bindings": {
+    "lots": [
+     "LOT-0191"
+    ],
+    "part": "CHIP-IVI",
+    "plant": "P_IN",
+    "supplier": "SUP-12",
+    "first": "2027-03-02",
+    "last": "2027-03-03",
+    "date_readings": {
+     "start": "explicit",
+     "end": "explicit"
+    }
+   },
+   "grounding_checks": [
+    "lot(s) LOT-0191 (SUP-12 CHIP-IVI @ P_IN 2027-03-02..2027-03-03)",
+    "lot part CHIP-IVI matches",
+    "lot plant P_IN matches",
+    "lot supplier SUP-12 matches"
+   ],
+   "path_schema": [
+    "Lot",
+    "ProductionOrder",
+    "Vehicle",
+    "Dealer / Customer"
+   ],
+   "example_path": [
+    "Lot:LOT-0191",
+    "ProductionOrder:PO-0291",
+    "Vehicle:AUR0003234",
+    "Customer:C6727"
+   ],
+   "evidence_edges": [
+    [
+     "Lot:LOT-0191",
+     "OF_PART",
+     "Part:CHIP-IVI"
+    ],
+    [
+     "Lot:LOT-0191",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0291"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003234"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003235"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003236"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003237"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003238"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003239"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003240"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003241"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003242"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003243"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003244"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003245"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003246"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003247"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003248"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003249"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003250"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003251"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003252"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003253"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003254"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003255"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003256"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003257"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003258"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003259"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003260"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003261"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003262"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003263"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003264"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003265"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003266"
+    ],
+    [
+     "ProductionOrder:PO-0291",
+     "PRODUCED",
+     "Vehicle:AUR0003267"
+    ],
+    [
+     "Lot:LOT-0191",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0294"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003335"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003336"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003337"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003338"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003339"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003340"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003341"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003342"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003343"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003344"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003345"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003346"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003347"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003348"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003349"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003350"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003351"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003352"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003353"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003354"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003355"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003356"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003357"
+    ],
+    [
+     "ProductionOrder:PO-0294",
+     "PRODUCED",
+     "Vehicle:AUR0003358"
+    ],
+    [
+     "Lot:LOT-0191",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0289"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003174"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003175"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003176"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003177"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003178"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003179"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003180"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003181"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003182"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003183"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003184"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003185"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003186"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003187"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003188"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003189"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003190"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003191"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003192"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003193"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003194"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003195"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003196"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003197"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003198"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003199"
+    ],
+    [
+     "ProductionOrder:PO-0289",
+     "PRODUCED",
+     "Vehicle:AUR0003200"
+    ],
+    [
+     "Lot:LOT-0191",
+     "INSTALLED_IN",
+     "ProductionOrder:PO-0292"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003268"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003269"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003270"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003271"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003272"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003273"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003274"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003275"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003276"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003277"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003278"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003279"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003280"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003281"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003282"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003283"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003284"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003285"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003286"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003287"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003288"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003289"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003290"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003291"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003292"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003293"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003294"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003295"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003296"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003297"
+    ],
+    [
+     "ProductionOrder:PO-0292",
+     "PRODUCED",
+     "Vehicle:AUR0003298"
+    ]
+   ],
+   "affected_production_orders": [],
+   "lots": [
+    "LOT-0191"
+   ],
+   "vehicles": 116,
+   "blocked": null,
+   "restart": null
+  }
+ ],
+ "plan": [
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "quality.hold_lot",
+   "args": {
+    "lot_id": "LOT-0191"
+   },
+   "why": "lot LOT-0191 (SUP-12 CHIP-IVI @ P_IN) reported defective",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D02",
+    "vins": [
+     "AUR0003242"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D03",
+    "vins": [
+     "AUR0003238",
+     "AUR0003254",
+     "AUR0003267"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D04",
+    "vins": [
+     "AUR0003355"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D06",
+    "vins": [
+     "AUR0003235"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D07",
+    "vins": [
+     "AUR0003283"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D08",
+    "vins": [
+     "AUR0003236",
+     "AUR0003338"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D10",
+    "vins": [
+     "AUR0003180",
+     "AUR0003258"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D12",
+    "vins": [
+     "AUR0003176"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D13",
+    "vins": [
+     "AUR0003243"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D15",
+    "vins": [
+     "AUR0003264",
+     "AUR0003349"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D20",
+    "vins": [
+     "AUR0003293",
+     "AUR0003352"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D21",
+    "vins": [
+     "AUR0003287"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D22",
+    "vins": [
+     "AUR0003277"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D23",
+    "vins": [
+     "AUR0003175",
+     "AUR0003184",
+     "AUR0003273"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D24",
+    "vins": [
+     "AUR0003294"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D25",
+    "vins": [
+     "AUR0003240",
+     "AUR0003262"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D26",
+    "vins": [
+     "AUR0003286",
+     "AUR0003296"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D27",
+    "vins": [
+     "AUR0003288"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D28",
+    "vins": [
+     "AUR0003339"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D31",
+    "vins": [
+     "AUR0003250",
+     "AUR0003274"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D32",
+    "vins": [
+     "AUR0003270"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D35",
+    "vins": [
+     "AUR0003337"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D39",
+    "vins": [
+     "AUR0003256",
+     "AUR0003285"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D44",
+    "vins": [
+     "AUR0003280",
+     "AUR0003340"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D45",
+    "vins": [
+     "AUR0003341",
+     "AUR0003343",
+     "AUR0003345"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0053",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003263 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0093",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003185 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0100",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003295 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0102",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003190 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0104",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003177 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0163",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003348 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0260",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003259 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0310",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003174 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0434",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003272 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0437",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003193 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0501",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003260 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0541",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003196 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0604",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003298 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0632",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003187 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0743",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003268 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0959",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003347 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1109",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003252 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1145",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003266 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1159",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003189 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1171",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003200 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1236",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003183 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1357",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003182 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1366",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003192 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1386",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003358 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1439",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003179 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1550",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003178 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1596",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003289 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1649",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003275 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1731",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003198 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1779",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003237 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1844",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003346 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1963",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003279 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2115",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003246 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2275",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003181 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2281",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003241 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2418",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003191 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2549",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003194 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2583",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003249 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2605",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003284 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2622",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003290 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2701",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003199 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2708",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003197 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2749",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003269 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2823",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003342 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2898",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003265 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3029",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003253 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3355",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003297 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3697",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003353 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3771",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003276 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4033",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003291 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4096",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003281 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4180",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003357 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4244",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003239 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4249",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003186 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4447",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003336 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4522",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003245 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4595",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003354 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4863",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003257 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4937",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003261 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5016",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003356 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5021",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003195 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5099",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003188 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5234",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003351 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5279",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003292 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5489",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003271 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5623",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003255 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5998",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003335 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6063",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003251 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6067",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003350 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6399",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003247 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6418",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003344 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6727",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003234 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6746",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003278 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6816",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003244 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6890",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003248 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C7000",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003282 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ]
+  }
+ ],
+ "dry_run": {
+  "ok": true,
+  "calls": 102,
+  "checks": [
+   {
+    "check": "no failed calls in dry run",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "moved exactly the affected production orders",
+    "ok": true,
+    "detail": "extra=[] missing=[] (n=0)"
+   },
+   {
+    "check": "no plant-day over capacity",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "no order moved into a disrupted day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "same-plant moves are at/after the restart day",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "transfers only when the home plant is full",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "dealer notices list exactly the affected customer orders",
+    "ok": true,
+    "detail": "dealers expected=0 got=0"
+   },
+   {
+    "check": "exactly one notice per dealer",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "loaners match pool limits and priority",
+    "ok": true,
+    "detail": "expected 0 of 0 entitled; got 0"
+   },
+   {
+    "check": "lots held",
+    "ok": true,
+    "detail": "['LOT-0191'] vs ['LOT-0191']"
+   },
+   {
+    "check": "stop-sale exactly the unsold affected vehicles",
+    "ok": true,
+    "detail": "40 vs 40"
+   },
+   {
+    "check": "owners of sold affected vehicles contacted (and nobody else)",
+    "ok": true,
+    "detail": "76 vs 76"
+   },
+   {
+    "check": "at least three kinds of action per real incident",
+    "ok": true,
+    "detail": "['crm.notify_customer', 'dealer.stop_sale', 'quality.hold_lot']"
+   }
+  ]
+ },
+ "executed": [
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "quality.hold_lot",
+   "args": {
+    "lot_id": "LOT-0191"
+   },
+   "why": "lot LOT-0191 (SUP-12 CHIP-IVI @ P_IN) reported defective",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D02",
+    "vins": [
+     "AUR0003242"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D03",
+    "vins": [
+     "AUR0003238",
+     "AUR0003254",
+     "AUR0003267"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D04",
+    "vins": [
+     "AUR0003355"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D06",
+    "vins": [
+     "AUR0003235"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D07",
+    "vins": [
+     "AUR0003283"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D08",
+    "vins": [
+     "AUR0003236",
+     "AUR0003338"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D10",
+    "vins": [
+     "AUR0003180",
+     "AUR0003258"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D12",
+    "vins": [
+     "AUR0003176"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D13",
+    "vins": [
+     "AUR0003243"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D15",
+    "vins": [
+     "AUR0003264",
+     "AUR0003349"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D20",
+    "vins": [
+     "AUR0003293",
+     "AUR0003352"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D21",
+    "vins": [
+     "AUR0003287"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D22",
+    "vins": [
+     "AUR0003277"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D23",
+    "vins": [
+     "AUR0003175",
+     "AUR0003184",
+     "AUR0003273"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D24",
+    "vins": [
+     "AUR0003294"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D25",
+    "vins": [
+     "AUR0003240",
+     "AUR0003262"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D26",
+    "vins": [
+     "AUR0003286",
+     "AUR0003296"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D27",
+    "vins": [
+     "AUR0003288"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D28",
+    "vins": [
+     "AUR0003339"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D31",
+    "vins": [
+     "AUR0003250",
+     "AUR0003274"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D32",
+    "vins": [
+     "AUR0003270"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D35",
+    "vins": [
+     "AUR0003337"
+    ]
+   },
+   "why": "1 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D39",
+    "vins": [
+     "AUR0003256",
+     "AUR0003285"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D44",
+    "vins": [
+     "AUR0003280",
+     "AUR0003340"
+    ]
+   },
+   "why": "2 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "DealerNetwork",
+   "tool": "dealer.stop_sale",
+   "args": {
+    "dealer_id": "D45",
+    "vins": [
+     "AUR0003341",
+     "AUR0003343",
+     "AUR0003345"
+    ]
+   },
+   "why": "3 unsold vehicle(s) built with LOT-0191",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0053",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003263 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0093",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003185 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0100",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003295 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0102",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003190 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0104",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003177 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0163",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003348 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0260",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003259 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0310",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003174 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0434",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003272 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0437",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003193 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0501",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003260 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0541",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003196 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0604",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003298 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0632",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003187 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0743",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003268 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C0959",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003347 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1109",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003252 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1145",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003266 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1159",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003189 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1171",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003200 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1236",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003183 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1357",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003182 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1366",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003192 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1386",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003358 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1439",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003179 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1550",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003178 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1596",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003289 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1649",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003275 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1731",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003198 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1779",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003237 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1844",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003346 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C1963",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003279 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2115",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003246 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2275",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003181 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2281",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003241 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2418",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003191 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2549",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003194 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2583",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003249 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2605",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003284 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2622",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003290 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2701",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003199 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2708",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003197 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2749",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003269 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2823",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003342 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C2898",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003265 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3029",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003253 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3355",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003297 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3697",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003353 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C3771",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003276 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4033",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003291 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4096",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003281 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4180",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003357 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4244",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003239 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4249",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003186 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4447",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003336 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4522",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003245 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4595",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003354 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4863",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003257 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C4937",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003261 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5016",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003356 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5021",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003195 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5099",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003188 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5234",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003351 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5279",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003292 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5489",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003271 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5623",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003255 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C5998",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003335 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6063",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003251 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6067",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003350 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6399",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003247 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6418",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003344 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6727",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003234 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6746",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003278 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6816",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003244 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C6890",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003248 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  },
+  {
+   "agent": "CustomerCareQuality",
+   "tool": "crm.notify_customer",
+   "args": {
+    "customer_id": "C7000",
+    "message": "Safety/quality notice: your vehicle(s) AUR0003282 were built with CHIP-IVI from lot LOT-0191, now on quality hold. Your dealer will contact you to schedule an inspection."
+   },
+   "why": "owner of 1 sold affected vehicle(s)",
+   "incidents": [
+    "I1:quality_hold"
+   ],
+   "ok": true,
+   "result": {
+    "ok": true
+   }
+  }
+ ],
+ "settings": {
+  "transfer_anchor": "original_date",
+  "llm_backend": "ollama",
+  "llm_model": "qwen2.5:1.5b",
+  "llm_url": null
+ },
+ "human_review": [],
+ "dates_plain": {
+  "dates": [
+   {
+    "incident": "quality_hold",
+    "phrase": "2027-03-02",
+    "role": "first day",
+    "date": "Tue 2027-03-02",
+    "alternative": []
+   },
+   {
+    "incident": "quality_hold",
+    "phrase": "2027-03-03",
+    "role": "last day",
+    "date": "Wed 2027-03-03",
+    "alternative": []
+   }
+  ],
+  "why": ""
+ },
+ "loaners": [],
+ "moves": [],
+ "unplaced": [],
+ "escalation": "",
+ "summary": "Quality hold on LOT-0191 (CHIP-IVI @ P_IN, built 2027-03-02..2027-03-03); 116 vehicles affected. Actions: 76 x crm.notify_customer, 25 x dealer.stop_sale, 1 x quality.hold_lot.",
+ "audit": [
+  {
+   "t": 1794101079.608,
+   "agent": "Coordinator",
+   "step": "receive",
+   "detail": "quality bulletin: QUALITY BULLETIN QB-368: Lot LOT-0191 (CHIP-IVI, supplier SUP-12) installed at P_IN on vehicles built 2027-03-02 to 2027"
+  },
+  {
+   "t": 1794101082.035,
+   "agent": "Coordinator",
+   "step": "read",
+   "detail": "llm:qwen2.5:1.5b: ['quality_hold']; rules: ['quality_hold']"
+  },
+  {
+   "t": 1794101082.035,
+   "agent": "Coordinator",
+   "step": "ground",
+   "detail": "category=['quality_hold']; 1 grounded incident(s); 0 escalation reason(s); relative dates in this message read the same under every convention"
+  },
+  {
+   "t": 1794101082.035,
+   "agent": "CustomerCareQuality",
+   "step": "plan",
+   "detail": "hold 1 lot(s); contact 76 owners"
+  },
+  {
+   "t": 1794101082.035,
+   "agent": "DealerNetwork",
+   "step": "plan",
+   "detail": "stop-sale at 25 dealers for 40 unsold vehicles"
+  },
+  {
+   "t": 1794101082.037,
+   "agent": "Coordinator",
+   "step": "prove",
+   "detail": "dry run on twin: 102 calls, 13/13 invariants hold"
+  },
+  {
+   "t": 1794101082.076,
+   "agent": "Coordinator",
+   "step": "done",
+   "detail": "Quality hold on LOT-0191 (CHIP-IVI @ P_IN, built 2027-03-02..2027-03-03); 116 vehicles affected. Actions: 76 x crm.notify_customer, 25 x dealer.stop_sale, 1 x quality.hold_lot."
+  }
+ ],
+ "stats": {
+  "seconds": 2.47,
+  "live_calls": 102,
+  "failed_live_calls": 0,
+  "blocked_by_catalog": 0,
+  "reads": 0,
+  "writes": 102
+ }
+}

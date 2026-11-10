@@ -1,0 +1,141 @@
+{
+  "classes": {
+    "Supplier": "External company that ships parts (suppliers.csv)",
+    "Part": "Component in a bill of materials (parts.csv)",
+    "Model": "Vehicle model (models.csv)",
+    "Plant": "Assembly plant with daily build slots (plants.csv)",
+    "Shipment": "Inbound shipment of one part to one plant with an ETA (inbound_shipments.csv)",
+    "Lot": "Batch of a part installed at a plant over a build window (part_lots.csv)",
+    "ProductionOrder": "One day's build of a model at a plant (production_orders.csv)",
+    "CustomerOrder": "Customer purchase promised from a production order (customer_orders.csv)",
+    "Customer": "Buyer or owner, with a loyalty tier (customers.csv)",
+    "Dealer": "Retail dealer with a loaner pool (dealers.csv, loaners.csv)",
+    "Vehicle": "Finished vehicle by VIN, sold or in stock (finished_vehicles.csv)"
+  },
+  "relations": [
+    [
+      "Supplier",
+      "SHIPS",
+      "Shipment"
+    ],
+    [
+      "Shipment",
+      "CARRIES",
+      "Part"
+    ],
+    [
+      "Shipment",
+      "DELIVERS_TO",
+      "Plant"
+    ],
+    [
+      "Supplier",
+      "MADE",
+      "Lot"
+    ],
+    [
+      "Lot",
+      "OF_PART",
+      "Part"
+    ],
+    [
+      "Lot",
+      "INSTALLED_AT",
+      "Plant"
+    ],
+    [
+      "Lot",
+      "INSTALLED_IN",
+      "ProductionOrder"
+    ],
+    [
+      "Model",
+      "USES",
+      "Part"
+    ],
+    [
+      "Plant",
+      "CAN_BUILD",
+      "Model"
+    ],
+    [
+      "ProductionOrder",
+      "AT_PLANT",
+      "Plant"
+    ],
+    [
+      "ProductionOrder",
+      "BUILDS",
+      "Model"
+    ],
+    [
+      "CustomerOrder",
+      "FULFILLED_BY",
+      "ProductionOrder"
+    ],
+    [
+      "CustomerOrder",
+      "PLACED_BY",
+      "Customer"
+    ],
+    [
+      "CustomerOrder",
+      "SOLD_THROUGH",
+      "Dealer"
+    ],
+    [
+      "ProductionOrder",
+      "PRODUCED",
+      "Vehicle"
+    ],
+    [
+      "Vehicle",
+      "AT_DEALER",
+      "Dealer"
+    ],
+    [
+      "Vehicle",
+      "OWNED_BY",
+      "Customer"
+    ]
+  ],
+  "inferred": {
+    "INSTALLED_IN": "Lot L -> ProductionOrder P if P.plant = L.plant, L.first <= P.build_date <= L.last, and P.model USES L.part"
+  },
+  "stats": {
+    "nodes": 16979,
+    "edges": 28151,
+    "nodes_by_class": {
+      "Plant": 6,
+      "Model": 6,
+      "Part": 20,
+      "Supplier": 18,
+      "Dealer": 50,
+      "Customer": 7000,
+      "Shipment": 364,
+      "Lot": 364,
+      "ProductionOrder": 540,
+      "CustomerOrder": 3263,
+      "Vehicle": 5348
+    },
+    "edges_by_relation": {
+      "CAN_BUILD": 18,
+      "USES": 47,
+      "SHIPS": 364,
+      "MADE": 364,
+      "CARRIES": 364,
+      "DELIVERS_TO": 364,
+      "OF_PART": 364,
+      "INSTALLED_AT": 364,
+      "INSTALLED_IN": 1410,
+      "AT_PLANT": 540,
+      "BUILDS": 540,
+      "PRODUCED": 5348,
+      "FULFILLED_BY": 3263,
+      "PLACED_BY": 3263,
+      "SOLD_THROUGH": 3263,
+      "AT_DEALER": 5348,
+      "OWNED_BY": 2927
+    }
+  }
+}
